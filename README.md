@@ -105,31 +105,28 @@ This is an opionated configuration for typescript react native project.
   ```
   cd <PROJECT_NAME>
   ```
-
-- Rename `displayName` and `name` in `app.json`
-
-- Rename `name`in `package.json`
-
-- [Link your github repository with Codecov](https://docs.codecov.io/docs)
-
-- Update the token in `package.json` > scripts > codecov
-
-- Delete `ios` and `android` directories
-  ```
-  rm -rf ios android
-  ```
-- Create new ones
-  ```
-  react-native eject
-  ```
 - Install dependencies
   ```
   yarn
   ```
-- Link packages
+- Rename the project
   ```
-  react-native link
+  yarn run rename <PROJECT_NAME>
   ```
+
+- Update pods
+  ```
+  cd ios && pod install
+  ```
+
+- Remove .git
+  ```
+  rm -rf .git
+  ```
+
+- [Link your github repository with Codecov](https://docs.codecov.io/docs)
+
+- Update the token in `package.json` > scripts > codecov
 
 ## Usage
 
