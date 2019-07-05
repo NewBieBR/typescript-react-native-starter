@@ -41,7 +41,7 @@ This is an opionated configuration for typescript react native project.
 
 - **Others**
 	- Get app version with [react-native-version-number](https://github.com/APSL/react-native-version-number): useful for updating persist store when you add new properties to your reducers
-	- Rename project easily with [react-native-rename](https://github.com/junedomingo/react-native-rename)
+	- Installation script `./bin/install.sh`
 
 
 ## Project Structure
