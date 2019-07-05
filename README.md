@@ -8,9 +8,14 @@ This is an opionated configuration for typescript react native project.
 
 ## Features
 
-- **Typescript** - Initialized with [React Native's typescript template](https://github.com/react-native-community/react-native-template-typescript)
+- **Typescript**
+	- Initialized with [React Native's typescript template](https://github.com/react-native-community/react-native-template-typescript)
 
-- **Flux State management** - [Redux](https://github.com/reduxjs/redux): predictable state container - [Redux Persist](https://github.com/rt2zz/redux-persist): offline store - [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux - Create typesafe actions easily with [typesafe-actions](https://github.com/piotrwitek/typesafe-actions)
+- **Flux State management**
+	- [Redux](https://github.com/reduxjs/redux): predictable state container
+	- [Redux Persist](https://github.com/rt2zz/redux-persist): offline store
+	- [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux
+	- Create typesafe actions easily with [typesafe-actions](https://github.com/piotrwitek/typesafe-actions)
 
       ```javascript
       import { action } from 'typesafe-actions';
@@ -19,15 +24,24 @@ This is an opionated configuration for typescript react native project.
       export const myAction = payload => action(types.MY_ACTION_TYPE, payload);
       ```
 
-- **Navigation** - [React Navivation](https://github.com/react-navigation/react-navigation): easy-to-use navigation solution based on Javascript
+- **Navigation**
+	- [React Navivation](https://github.com/react-navigation/react-navigation): easy-to-use navigation solution based on Javascript
 
-- **Unit testing** - Unit tests with [Jest](https://github.com/facebook/jest), [Enzyme](https://github.com/airbnb/enzyme) and [react-native-testing-library](https://github.com/callstack/react-native-testing-library) - Coverage report with [Codecov](https://codecov.io/)
+- **Unit testing**
+	- Unit tests with [Jest](https://github.com/facebook/jest), [Enzyme](https://github.com/airbnb/enzyme) and [react-native-testing-library](https://github.com/callstack/react-native-testing-library)
+	- Coverage report with [Codecov](https://codecov.io/)
 
-- **Linting** - Tslint configured with Airbnb styles - Run lint pre-commit and unit test pre-push with [husky](https://github.com/typicode/husky) - Vscode Prettier compatible
+- **Linting**
+	- Tslint configured with Airbnb styles
+	- Run lint pre-commit and unit test pre-push with [husky](https://github.com/typicode/husky)
+	- Vscode Prettier compatible
 
-- **Internationalization and localization** - i18n with [react-native-localization](https://github.com/stefalda/ReactNativeLocalization)
+- **Internationalization and localization**
+	- i18n with [react-native-localization](https://github.com/stefalda/ReactNativeLocalization)
 
-- **Others** - Get app version with [react-native-version-number](https://github.com/APSL/react-native-version-number): useful for updating persist store when you add new properties to your reducers
+- **Others**
+	- Get app version with [react-native-version-number](https://github.com/APSL/react-native-version-number): useful for updating persist store when you add new properties to your reducers
+
 
 ## Project Structure
 
