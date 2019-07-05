@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "TypescriptReactNative.app"
-            BlueprintName = "TypescriptReactNative"
-            ReferencedContainer = "container:TypescriptReactNative.xcodeproj">
+            BuildableName = "TypescriptReactNativeStarter.app"
+            BlueprintName = "TypescriptReactNativeStarter"
+            ReferencedContainer = "container:TypescriptReactNativeStarter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "TypescriptReactNative.app"
-            BlueprintName = "TypescriptReactNative"
-            ReferencedContainer = "container:TypescriptReactNative.xcodeproj">
+            BuildableName = "TypescriptReactNativeStarter.app"
+            BlueprintName = "TypescriptReactNativeStarter"
+            ReferencedContainer = "container:TypescriptReactNativeStarter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>

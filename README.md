@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Codecov Coverage](https://img.shields.io/codecov/c/github/NewBieBR/typescript-react-native.svg?style=popout)](https://codecov.io/gh/NewBieBR/typescript-react-native-starter)
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/NewBieBR/typescript-react-native-starter.svg?style=popout)](https://codecov.io/gh/NewBieBR/typescript-react-native-starter)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
 # Typescript React Native Starter
@@ -41,6 +41,7 @@ This is an opionated configuration for typescript react native project.
 
 - **Others**
 	- Get app version with [react-native-version-number](https://github.com/APSL/react-native-version-number): useful for updating persist store when you add new properties to your reducers
+	- Rename project easily with [react-native-rename](https://github.com/junedomingo/react-native-rename)
 
 
 ## Project Structure

@@ -1,4 +1,4 @@
-    package com.typescriptreactnative;
+    package com.typescriptreactnativestarter;
 
     import com.facebook.react.ReactActivity;
     import com.facebook.react.ReactActivityDelegate;
@@ -13,7 +13,7 @@
      */
     @Override
     protected String getMainComponentName() {
-        return "TypescriptReactNative";
+        return "TypescriptReactNativeStarter";
     }
 
       @Override

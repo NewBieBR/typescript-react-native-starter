@@ -1,4 +1,4 @@
-package com.typescriptreactnative;
+package com.typescriptreactnativestarterstarter;
 
 import android.app.Application;
 
