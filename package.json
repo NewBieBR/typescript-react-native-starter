@@ -8,7 +8,7 @@
     "test:update": "jest --verbose --coverage --updateSnapshot",
     "test:watch": "jest --verbose --watch",
     "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
-    "codecov": "jest --verbose --coverage && ./node_modules/.bin/codecov --token=9f4f9a34-9344-413b-901c-dec18c7ce836",
+    "codecov": "jest --verbose --coverage && ./node_modules/.bin/codecov --token=176f4867-f830-40ec-a536-90e7b611d713",
     "lint": "tslint --project tsconfig.json -q -e \"coverage/**\""
   },
   "husky": {
