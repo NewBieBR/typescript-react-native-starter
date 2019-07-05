@@ -2,8 +2,6 @@
 
 if [[ $# -ge 1 ]]
 then
-    defaultAppName="TypescriptReactNativeStarter"
-    defaultPackageName="typescript-react-native-starter"
     projectName="$1"
     yarn
     yarn run rename $projectName
