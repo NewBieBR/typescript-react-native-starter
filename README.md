@@ -9,13 +9,12 @@ This is an opionated configuration for typescript react native project.
 ## Features
 
 - **Typescript**
-	- Initialized with [React Native's typescript template](https://github.com/react-native-community/react-native-template-typescript)
+	- [React Native's typescript template](https://github.com/react-native-community/react-native-template-typescript) based
 
 - **Flux State management**
 	- [Redux](https://github.com/reduxjs/redux): predictable state container
 	- [Redux Persist](https://github.com/rt2zz/redux-persist): offline store
-	- [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux
-	- Create typesafe actions easily with [typesafe-actions](https://github.com/piotrwitek/typesafe-actions)
+	- [typesafe-actions](https://github.com/piotrwitek/typesafe-actions): create typesafe actions easily
 
       ```javascript
       import { action } from 'typesafe-actions';
@@ -29,19 +28,22 @@ This is an opionated configuration for typescript react native project.
 
 - **Unit testing**
 	- Unit tests with [Jest](https://github.com/facebook/jest), [Enzyme](https://github.com/airbnb/enzyme) and [react-native-testing-library](https://github.com/callstack/react-native-testing-library)
-	- Coverage report with [Codecov](https://codecov.io/)
+	- [Codecov](https://codecov.io/): coverage report
+
+- **CI/CD**
+  - Run linting pre-commit and unit testing pre-push with [husky](https://github.com/typicode/husky)'s hooks
 
 - **Linting**
 	- Tslint configured with Airbnb styles
-	- Run lint pre-commit and unit test pre-push with [husky](https://github.com/typicode/husky)
 	- Vscode Prettier compatible
 
 - **Internationalization and localization**
-	- i18n with [react-native-localization](https://github.com/stefalda/ReactNativeLocalization)
+	- [react-native-localization](https://github.com/stefalda/ReactNativeLocalization): easy to use package for i18n
 
 - **Others**
-	- Get app version with [react-native-version-number](https://github.com/APSL/react-native-version-number): useful for updating persist store when you add new properties to your reducers
-	- Installation script `./bin/install.sh`
+  - [Cocoapods](https://github.com/CocoaPods/CocoaPods): manage ios dependencies
+  - [react-native-version-number](https://github.com/APSL/react-native-version-number): useful for updating persist store when you add new properties to your reducers on new app version
+  - Installation script `./bin/install.sh`
 
 
 ## Project Structure
@@ -142,3 +144,9 @@ You can use react-native-screens with react-navigation in order to [improve memo
 ```
 
 - Follow steps in `Usage with react-navigation (without Expo)` from [react-native-screens](https://github.com/kmagiera/react-native-screens)
+
+## Todo
+- **Flux State management**
+  - [ ] [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux
+- **CI/CD**
+  - [ ] [Fastlane](https://github.com/fastlane/fastlane)
