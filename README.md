@@ -41,7 +41,7 @@ This is an opionated configuration for typescript react native project.
 	- [react-native-localization](https://github.com/stefalda/ReactNativeLocalization): easy to use package for i18n
 
 - **Others**
-  - [Cocoapods](https://github.com/CocoaPods/CocoaPods): manage ios dependencies
+  - [Cocoapods](https://github.com/CocoaPods/CocoaPods): iOS dependencies manager
   - [react-native-version-number](https://github.com/APSL/react-native-version-number): useful for updating persist store when you add new properties to your reducers on new app version
   - Installation script `./bin/install.sh`
 
