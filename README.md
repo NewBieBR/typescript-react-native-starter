@@ -22,6 +22,7 @@ This is an opionated configuration for typescript react native project.
 
       export const myAction = payload => action(types.MY_ACTION_TYPE, payload);
       ```
+	- [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux
 
 - **Navigation**
 	- [React Navivation](https://github.com/react-navigation/react-navigation): easy-to-use navigation solution based on Javascript
@@ -63,17 +64,17 @@ This is an opionated configuration for typescript react native project.
 └── src
     ├── App.tsx
     ├── actions                          // Actions
-    │   ├── actionTypes.tsx              // Action types
-    │   └── app.tsx                      // appReducer's actions
+    │   ├── actionTypes.ts               // Action types
+    │   └── app.ts                       // appReducer's actions
     ├── components                       // Components
     │   └── MyComponent.tsx
     ├── constants                        // colors, sizes, routes,...
-    │   └── strings.tsx                  // i18n
+    │   └── strings.ts                   // i18n
     ├── containers                       // screens, pages,...
     ├── index.tsx                        // Root component
     ├── reducers                         // Reducers
-    │   └── app.tsx                      // appReducer
-    ├── store.tsx
+    │   └── app.ts                       // appReducer
+    ├── store.ts
     ├── types                            // Type declarations
     │   └── index.d.ts
     └── utils                            // Utilities
@@ -136,6 +137,8 @@ This is an opionated configuration for typescript react native project.
 
 You can use react-native-screens with react-navigation in order to [improve memory consumption](https://reactnavigation.org/docs/en/community-libraries-and-navigators.html#react-native-screens)
 
+- Follow steps in `Usage with react-navigation (without Expo)` from [react-native-screens](https://github.com/kmagiera/react-native-screens)
+
 - Open `./src/index.tsx` and uncomment
 
 ```javascript
@@ -143,10 +146,7 @@ You can use react-native-screens with react-navigation in order to [improve memo
 // useScreens();
 ```
 
-- Follow steps in `Usage with react-navigation (without Expo)` from [react-native-screens](https://github.com/kmagiera/react-native-screens)
 
 ## Todo
-- **Flux State management**
-  - [ ] [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux
 - **CI/CD**
   - [ ] [Fastlane](https://github.com/fastlane/fastlane)

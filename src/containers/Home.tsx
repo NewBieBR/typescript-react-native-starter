@@ -8,7 +8,9 @@ import {
 } from 'react-navigation';
 import { connect } from 'react-redux';
 import { setAppVersion, updateStoreState } from '../actions/app';
+import { fetchUser } from '../actions/users';
 import strings from '../constants/strings';
+import { User } from '../types';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -19,14 +21,17 @@ const instructions = Platform.select({
 export interface Props {
   updateStoreState: typeof updateStoreState;
   setAppVersion: typeof setAppVersion;
+  fetchUser: typeof fetchUser;
   version: string;
   buildVersion: string;
+  user: User;
   navigation: NavigationScreenProp<NavigationState, NavigationParams>;
 }
 
 export class Home extends Component<Props> {
   componentDidMount() {
     this.checkAppVersion();
+    this.props.fetchUser('1');
   }
 
   checkAppVersion() {
@@ -58,11 +63,13 @@ export class Home extends Component<Props> {
 const mapStateToProps = (state: any) => ({
   version: state.app.version,
   buildVersion: state.app.buildVersion,
+  user: state.users.user,
 });
 
 const mapDispatchToProps = {
   updateStoreState,
   setAppVersion,
+  fetchUser,
 };
 
 export default connect(

@@ -18,6 +18,13 @@ export const APP = createActionTypes('APP', [
   'SET_VERSION',
 ]);
 
+export const USER = createActionTypes('USER', [
+  'FETCH',
+  'FETCH_SUCCESS',
+  'FETCH_FAILURE',
+]);
+
 export default {
   app: APP,
+  user: USER,
 };
