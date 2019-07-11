@@ -25,6 +25,7 @@ describe('Home', () => {
   const props = createTestProps({
     version: '1.0.0',
     buildVersion: '1',
+    fetchUser: jest.fn(),
   });
   const { getByText, toJSON } = render(<Home {...props} />);
 
@@ -43,9 +44,11 @@ describe('Home function', () => {
   it('should updateStoreState and setAppVersion', () => {
     const updateStoreState = jest.fn();
     const setAppVersion = jest.fn();
+    const fetchUser = jest.fn();
     const props = createTestProps({
       updateStoreState,
       setAppVersion,
+      fetchUser,
     });
     const wrapper = shallow<Home>(<Home {...props} />);
     wrapper.instance().checkAppVersion();
