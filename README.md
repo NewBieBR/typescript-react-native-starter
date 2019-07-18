@@ -131,7 +131,19 @@ This is an opionated configuration for typescript react native project.
 
 - Update the token in `package.json` > scripts > codecov
 
-## Usage
+## Note
+
+### Cocoapod
+
+When you run `react-native link` and the linked library has podspec file, then the linking will use Podfile. To disable this feature, remove
+```ruby
+# Add new pods below this line
+```
+from line 24 in `ios/Podfile`
+
+### Static bundle
+
+The static bundle is built every time you target a physical device, even in Debug. To save time, the bundle generation [is disabled in Debug](https://facebook.github.io/react-native/docs/running-on-device)
 
 ### react-native-screens
 

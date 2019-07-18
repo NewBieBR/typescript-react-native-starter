@@ -21,4 +21,11 @@ target 'TypescriptReactNativeStarter' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  # Add new pods below this line
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
+  pod 'react-native-version-number', :path => '../node_modules/react-native-version-number'
+
+  pod 'ReactNativeLocalization', :path => '../node_modules/react-native-localization'
+
 end
