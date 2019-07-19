@@ -8,13 +8,9 @@ This is an opionated configuration for typescript react native project.
 
 ## Features
 
-- **Typescript**
-	- [React Native's typescript template](https://github.com/react-native-community/react-native-template-typescript) based
+- **Typescript** - [React Native's typescript template](https://github.com/react-native-community/react-native-template-typescript) based
 
-- **Flux State management**
-	- [Redux](https://github.com/reduxjs/redux): predictable state container
-	- [Redux Persist](https://github.com/rt2zz/redux-persist): offline store
-	- [typesafe-actions](https://github.com/piotrwitek/typesafe-actions): create typesafe actions easily
+- **Flux State management** - [Redux](https://github.com/reduxjs/redux): predictable state container - [Redux Persist](https://github.com/rt2zz/redux-persist): offline store - [typesafe-actions](https://github.com/piotrwitek/typesafe-actions): create typesafe actions easily
 
       ```javascript
       import { action } from 'typesafe-actions';
@@ -22,30 +18,24 @@ This is an opionated configuration for typescript react native project.
 
       export const myAction = payload => action(types.MY_ACTION_TYPE, payload);
       ```
-	- [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux
+      	- [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux
 
-- **Navigation**
-	- [React Navivation](https://github.com/react-navigation/react-navigation): easy-to-use navigation solution based on Javascript
+- **Navigation** - [React Navivation](https://github.com/react-navigation/react-navigation): easy-to-use navigation solution based on Javascript
 
-- **Unit testing**
-	- Unit tests with [Jest](https://github.com/facebook/jest), [Enzyme](https://github.com/airbnb/enzyme) and [react-native-testing-library](https://github.com/callstack/react-native-testing-library)
-	- [Codecov](https://codecov.io/): coverage report
+- **Unit testing** - Unit tests with [Jest](https://github.com/facebook/jest), [Enzyme](https://github.com/airbnb/enzyme) and [react-native-testing-library](https://github.com/callstack/react-native-testing-library) - [Codecov](https://codecov.io/): coverage report
 
 - **CI/CD**
+
   - Run linting pre-commit and unit testing pre-push with [husky](https://github.com/typicode/husky)'s hooks
 
-- **Linting**
-	- Tslint configured with Airbnb styles
-	- Vscode Prettier compatible
+- **Linting** - Tslint configured with Airbnb styles - Vscode Prettier compatible
 
-- **Internationalization and localization**
-	- [react-native-localization](https://github.com/stefalda/ReactNativeLocalization): easy to use package for i18n
+- **Internationalization and localization** - [react-native-localization](https://github.com/stefalda/ReactNativeLocalization): easy to use package for i18n
 
 - **Others**
   - [Cocoapods](https://github.com/CocoaPods/CocoaPods): iOS dependencies manager
   - [react-native-version-number](https://github.com/APSL/react-native-version-number): useful for updating persist store when you add new properties to your reducers on new app version
   - Installation script `./bin/install.sh`
-
 
 ## Project Structure
 
@@ -108,21 +98,25 @@ This is an opionated configuration for typescript react native project.
   ```
   cd <PROJECT_NAME>
   ```
+
 - Install dependencies
   ```
   yarn
   ```
 - Rename the project
+
   ```
   yarn run rename <PROJECT_NAME>
   ```
 
 - Update pods
+
   ```
   cd ios && pod install
   ```
 
 - Remove .git
+
   ```
   rm -rf .git
   ```
@@ -133,12 +127,26 @@ This is an opionated configuration for typescript react native project.
 
 ## Note
 
+### NavigationService
+
+You can [navigate without navigation prop](https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html) by using **NavigationService** from `src/lib/NavigationService.ts`
+
+```typescript
+import NavigationService from '../lib/NavigationService';
+
+//...
+
+NavigationService.navigate('ChatScreen', { userName: 'Lucy' });
+```
+
 ### Cocoapod
 
 When you run `react-native link` and the linked library has podspec file, then the linking will use Podfile. To disable this feature, remove
+
 ```ruby
 # Add new pods below this line
 ```
+
 from line 24 in `ios/Podfile`
 
 ### Static bundle
@@ -158,7 +166,7 @@ You can use react-native-screens with react-navigation in order to [improve memo
 // useScreens();
 ```
 
-
 ## Todo
+
 - **CI/CD**
   - [ ] [Fastlane](https://github.com/fastlane/fastlane)

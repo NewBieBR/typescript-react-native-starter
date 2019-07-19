@@ -5,6 +5,7 @@ import { createAppContainer } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import App from './App';
+import NavigationService from './lib/NavigationService';
 import { persistor, store } from './store';
 
 // useScreens();
@@ -17,7 +18,11 @@ export default class Root extends React.Component {
     return (
       <Provider store={store}>
         <PersistGate loading={<View />} persistor={persistor}>
-          <AppContainer />
+          <AppContainer
+            ref={navigatorRef => {
+              NavigationService.setTopLevelNavigator(navigatorRef);
+            }}
+          />
         </PersistGate>
       </Provider>
     );
