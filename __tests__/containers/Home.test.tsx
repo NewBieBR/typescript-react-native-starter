@@ -16,10 +16,6 @@ jest.mock('NativeModules', () => {
   };
 });
 
-jest.mock('react-native-version-number', () => {
-  return { appVersion: '1.0.0', buildVersion: '1' };
-});
-
 Enzyme.configure({ adapter: new Adapter() });
 describe('Home', () => {
   const props = createTestProps({
@@ -37,22 +33,5 @@ describe('Home', () => {
   });
   it('should match snapshot', () => {
     expect(toJSON()).toMatchSnapshot();
-  });
-});
-
-describe('Home function', () => {
-  it('should updateStoreState and setAppVersion', () => {
-    const updateStoreState = jest.fn();
-    const setAppVersion = jest.fn();
-    const fetchUser = jest.fn();
-    const props = createTestProps({
-      updateStoreState,
-      setAppVersion,
-      fetchUser,
-    });
-    const wrapper = shallow<Home>(<Home {...props} />);
-    wrapper.instance().checkAppVersion();
-    expect(updateStoreState).toBeCalled();
-    expect(setAppVersion).toBeCalled();
   });
 });
