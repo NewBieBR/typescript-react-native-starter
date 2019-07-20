@@ -10,7 +10,8 @@
     "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
     "codecov": "jest --verbose --coverage && ./node_modules/.bin/codecov --token=176f4867-f830-40ec-a536-90e7b611d713",
     "lint": "tslint --project tsconfig.json -q -e \"coverage/**\"",
-    "rename": "react-native-rename"
+    "rename": "react-native-rename",
+    "jetify": "npx jetify"
   },
   "husky": {
     "hooks": {

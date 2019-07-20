@@ -45,6 +45,7 @@ This is an opionated configuration for typescript react native project.
 
 - **Others**
   - [Cocoapods](https://github.com/CocoaPods/CocoaPods): iOS dependencies manager
+  - [jetifier](https://github.com/mikehardy/jetifier#readme): transition tool for [React Native 0.60 AndroidX migration](https://facebook.github.io/react-native/blog/2019/07/03/version-60#androidx-support)
 
 ## Project Structure
 
@@ -118,6 +119,12 @@ This is an opionated configuration for typescript react native project.
   yarn run rename <PROJECT_NAME>
   ```
 
+- Migrate to AndroidX to [support React Native 0.60](https://facebook.github.io/react-native/blog/2019/07/03/version-60#androidx-support)
+
+  ```
+  yarn jetify
+  ```
+
 - Update pods
 
   ```
@@ -179,4 +186,5 @@ You can use react-native-screens with react-navigation in order to [improve memo
 ## Todo
 
 - **CI/CD**
+  - [ ]  CircleCI
   - [ ] [Fastlane](https://github.com/fastlane/fastlane)
