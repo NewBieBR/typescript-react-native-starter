@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../actions/users';
 import strings from '../constants/strings';
 import { User } from '../types';
-
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:

@@ -8,9 +8,13 @@ This is an opionated configuration for typescript react native project.
 
 ## Features
 
-- **Typescript** - [React Native's typescript template](https://github.com/react-native-community/react-native-template-typescript) based
+- **Typescript**
+  - [React Native's typescript template](https://github.com/react-native-community/react-native-template-typescript) based
 
-- **Flux State management** - [Redux](https://github.com/reduxjs/redux): predictable state container - [Redux Persist](https://github.com/rt2zz/redux-persist): offline store - [typesafe-actions](https://github.com/piotrwitek/typesafe-actions): create typesafe actions easily
+- **Flux State management**
+  - [Redux](https://github.com/reduxjs/redux): predictable state container
+  - [Redux Persist](https://github.com/rt2zz/redux-persist): offline store
+  - [typesafe-actions](https://github.com/piotrwitek/typesafe-actions): create typesafe actions easily
 
       ```javascript
       import { action } from 'typesafe-actions';
@@ -18,19 +22,26 @@ This is an opionated configuration for typescript react native project.
 
       export const myAction = payload => action(types.MY_ACTION_TYPE, payload);
       ```
-      	- [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux
 
-- **Navigation** - [React Navivation](https://github.com/react-navigation/react-navigation): easy-to-use navigation solution based on Javascript
+  - [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux
 
-- **Unit testing** - Unit tests with [Jest](https://github.com/facebook/jest), [Enzyme](https://github.com/airbnb/enzyme) and [react-native-testing-library](https://github.com/callstack/react-native-testing-library) - [Codecov](https://codecov.io/): coverage report
+- **Navigation**
+  - [React Navivation](https://github.com/react-navigation/react-navigation): easy-to-use navigation solution based on Javascript
+
+- **Unit testing**
+  - Unit tests with [Jest](https://github.com/facebook/jest), [Enzyme](https://github.com/airbnb/enzyme) and [react-native-testing-library](https://github.com/callstack/react-native-testing-library)
+- - [Codecov](https://codecov.io/): coverage report
 
 - **CI/CD**
 
   - Run linting pre-commit and unit testing pre-push with [husky](https://github.com/typicode/husky)'s hooks
 
-- **Linting** - Tslint configured with Airbnb styles - Vscode Prettier compatible
+- **Linting**
+  - Tslint configured with Airbnb styles
+  - Vscode Prettier compatible
 
-- **Internationalization and localization** - [react-native-localization](https://github.com/stefalda/ReactNativeLocalization): easy to use package for i18n
+- **Internationalization and localization**
+  - [react-native-localization](https://github.com/stefalda/ReactNativeLocalization): easy to use package for i18n
 
 - **Others**
   - [Cocoapods](https://github.com/CocoaPods/CocoaPods): iOS dependencies manager
@@ -151,11 +162,12 @@ from line 24 in `ios/Podfile`
 
 The static bundle is built every time you target a physical device, even in Debug. To save time, the bundle generation [is disabled in Debug](https://facebook.github.io/react-native/docs/running-on-device)
 
+
 ### react-native-screens
 
 You can use react-native-screens with react-navigation in order to [improve memory consumption](https://reactnavigation.org/docs/en/community-libraries-and-navigators.html#react-native-screens)
 
-- Follow steps in `Usage with react-navigation (without Expo)` from [react-native-screens](https://github.com/kmagiera/react-native-screens)
+- Install and follow steps in `Usage with react-navigation (without Expo)` from [react-native-screens](https://github.com/kmagiera/react-native-screens)
 
 - Open `./src/index.tsx` and uncomment
 

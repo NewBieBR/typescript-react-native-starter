@@ -4,7 +4,11 @@ import React from 'react';
 import { render } from 'react-native-testing-library';
 import { Home, Props } from '../../src/containers/Home';
 
+Enzyme.configure({ adapter: new Adapter() });
+
 const createTestProps = (props?: object) => ({
+  fetchUser: jest.fn(),
+  user: {},
   ...props,
 });
 
@@ -16,21 +20,24 @@ jest.mock('NativeModules', () => {
   };
 });
 
-Enzyme.configure({ adapter: new Adapter() });
 describe('Home', () => {
-  const props = createTestProps({
-    version: '1.0.0',
-    buildVersion: '1',
-    fetchUser: jest.fn(),
+  const fetchUser = jest.fn();
+  const navigate = jest.fn();
+  const props: any = createTestProps({
+    fetchUser,
+    navigation: {
+      navigate,
+    },
   });
   const { getByText, toJSON } = render(<Home {...props} />);
-
   it('should render a welcome', () => {
     expect(getByText(/welcome/i)).toBeDefined();
   });
-  it('should render a edit', () => {
-    expect(getByText(/edit/i)).toBeDefined();
+
+  it('should call fetchUser', () => {
+    expect(fetchUser).toBeCalled();
   });
+
   it('should match snapshot', () => {
     expect(toJSON()).toMatchSnapshot();
   });
