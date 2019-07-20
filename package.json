@@ -48,6 +48,7 @@
     "eslint": "^6.0.1",
     "husky": "^2.4.1",
     "jest": "^24.8.0",
+    "jetifier": "^1.6.3",
     "metro-react-native-babel-preset": "^0.55.0",
     "react-dom": "^16.8.6",
     "react-native-rename": "^2.4.1",
