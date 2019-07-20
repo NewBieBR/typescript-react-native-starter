@@ -61,7 +61,3 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
-
-# Ignore test-related files
-/coverage.data
-/coverage/
