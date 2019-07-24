@@ -186,6 +186,7 @@ You can use react-native-screens with react-navigation in order to [improve memo
 ## Todo
 - **CI/CD**
   - [ ] Placeholder App Icon
+  - [ ] [App Icon generator](https://github.com/dwmkerr/app-icon#readme)
   - [ ] Fastlane quick start
   - [ ] ITSAppUsesNonExemptEncryption NO
 
