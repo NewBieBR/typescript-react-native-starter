@@ -185,6 +185,14 @@ You can use react-native-screens with react-navigation in order to [improve memo
 
 ## Todo
 
-- **CI/CD**
-  - [ ]  CircleCI
-  - [ ] [Fastlane](https://github.com/fastlane/fastlane)
+- **Other**
+  - [ ]  [autobind-decorator](https://github.com/andreypopp/autobind-decorator#readme): bind your component's functions easily with a decorator
+
+    Before:
+    ```JSX
+    <button onClick={ this.handleClick.bind(this) }></button>
+    ```
+    After:
+    ```JSX
+    <button onClick={ this.handleClick }></button>
+    ```

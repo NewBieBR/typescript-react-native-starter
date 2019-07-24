@@ -1,5 +1,6 @@
 const apiEntry = 'https://jsonplaceholder.typicode.com';
 const usersNamespace = 'users';
+
 export default class JSONPlacholderAPI {
   static apiEntry = apiEntry;
   static usersNamespace = usersNamespace;
