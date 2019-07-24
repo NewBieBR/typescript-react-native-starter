@@ -184,6 +184,9 @@ You can use react-native-screens with react-navigation in order to [improve memo
 ```
 
 ## Todo
+- **CI/CD**
+  - [ ] Placeholder App Icon
+  - [ ] Fastlane quick start
 
 - **Other**
   - [ ]  [autobind-decorator](https://github.com/andreypopp/autobind-decorator#readme): bind your component's functions easily with a decorator
