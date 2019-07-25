@@ -35,6 +35,8 @@ This is an opionated configuration for typescript react native project.
 - **CI/CD**
 
   - Run linting pre-commit and unit testing pre-push with [husky](https://github.com/typicode/husky)'s hooks
+  - Placeholder App Icon: useful for uploading your app to beta quickly with Fastlane
+  - [App Icon generator](https://github.com/dwmkerr/app-icon#readme): generate all required sizes, label and annotate icon.
 
 - **Linting**
   - Tslint configured with Airbnb styles
@@ -46,6 +48,21 @@ This is an opionated configuration for typescript react native project.
 - **Others**
   - [Cocoapods](https://github.com/CocoaPods/CocoaPods): iOS dependencies manager
   - [jetifier](https://github.com/mikehardy/jetifier#readme): transition tool for [React Native 0.60 AndroidX migration](https://facebook.github.io/react-native/blog/2019/07/03/version-60#androidx-support)
+  - [autobind-decorator](https://github.com/andreypopp/autobind-decorator#readme): bind your component's functions easily with a decorator
+
+    Before:
+    ```JSX
+    handleClick()  {...}
+
+    <button onClick={ this.handleClick.bind(this) }></button>
+    ```
+    After:
+    ```JSX
+    @boundMethod
+    handleClick() {...}
+
+    <button onClick={ this.handleClick }></button>
+    ```
 
 ## Project Structure
 
@@ -183,21 +200,26 @@ You can use react-native-screens with react-navigation in order to [improve memo
 // useScreens();
 ```
 
-## Todo
-- **CI/CD**
-  - [ ] Placeholder App Icon
-  - [ ] [App Icon generator](https://github.com/dwmkerr/app-icon#readme)
-  - [ ] Fastlane quick start
-  - [ ] ITSAppUsesNonExemptEncryption NO
+### Beta distribution with Fastlane
+- Install [fastlane](https://docs.fastlane.tools/getting-started/ios/setup/)
+  ```bash
+  # Using RubyGems
+  sudo gem install fastlane -NV
 
-- **Other**
-  - [ ]  [autobind-decorator](https://github.com/andreypopp/autobind-decorator#readme): bind your component's functions easily with a decorator
+  # Alternatively using Homebrew
+  brew cask install fastlane
+  ```
+- Open your project Xcode workspace and update your app's `Bundle Identifier` and `Team`
+- Initialize fastlane
+  ```bash
+  cd <PROJECT_NAME>/ios
+  fastlane init
+  ```
+- Distribute your app
+  ```bash
+  fastlane beta
+  ```
 
-    Before:
-    ```JSX
-    <button onClick={ this.handleClick.bind(this) }></button>
-    ```
-    After:
-    ```JSX
-    <button onClick={ this.handleClick }></button>
-    ```
+**Useful Source**:
+- Checkout the [Fastlane's beta distribution guide](https://github.com/thecodingmachine/react-native-boilerplate/blob/master/docs/beta%20builds.md) for more details
+- [Fastlane's documentation](https://docs.fastlane.tools/getting-started/cross-platform/react-native/) for React Native
