@@ -86,12 +86,14 @@ This is an opionated configuration for typescript react native project.
     │   └── app.ts                       // appReducer's actions
     ├── components                       // Components
     │   └── MyComponent.tsx
-    ├── constants                        // colors, sizes, routes,...
+    ├── constants                        // Colors, sizes, routes,...
     │   └── strings.ts                   // i18n
-    ├── containers                       // screens, pages,...
+    ├── containers                       // Screens, pages,...
+    ├── lib                              // Libraries, services,...
     ├── index.tsx                        // Root component
     ├── reducers                         // Reducers
     │   └── app.ts                       // appReducer
+    ├── sagas                            // Redux sagas
     ├── store.ts
     ├── types                            // Type declarations
     │   └── index.d.ts
