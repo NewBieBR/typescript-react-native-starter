@@ -233,7 +233,7 @@ You can use react-native-screens with react-navigation in order to [improve memo
 - Make sure that these 4 checkmark icons are green
     > Recommended order: `Pricing & distribution`, `Content rating`, `Store listing` and `App releases`
 
-    > You can find the required assets for `Store listing` in the `publishing` folder
+    > You can find the required assets for `Store listing` in the `publishing/android` folder
 
 
     ![](https://i.stack.imgur.com/C7vDL.png)
