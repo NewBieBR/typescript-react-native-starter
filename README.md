@@ -243,6 +243,11 @@ You can use react-native-screens with react-navigation in order to [improve memo
   cd <PROJECT_NAME>/android
   fastlane init
   ```
+- Use the Fastfile from `publishing`
+  ```bash
+  cp publishing/android/fastlane/Fastfile android/fastlane
+  ```
+
 - Distribute your app
   ```bash
   fastlane beta
