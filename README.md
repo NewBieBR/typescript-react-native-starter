@@ -37,6 +37,7 @@ This is an opionated configuration for typescript react native project.
   - Run linting pre-commit and unit testing pre-push with [husky](https://github.com/typicode/husky)'s hooks
   - Placeholder App Icon: useful for uploading your app to beta quickly with Fastlane
   - [App Icon generator](https://github.com/dwmkerr/app-icon#readme): generate all required sizes, label and annotate icon.
+  - Placeholder feature graphic and screenshot to upload beta android app quickly
 
 - **Linting**
   - Tslint configured with Airbnb styles
@@ -209,6 +210,8 @@ You can use react-native-screens with react-navigation in order to [improve memo
   # Alternatively using Homebrew
   brew cask install fastlane
   ```
+
+#### iOS
 - Open your project Xcode workspace and update your app's `Bundle Identifier` and `Team`
 - Initialize fastlane
   ```bash
@@ -220,6 +223,34 @@ You can use react-native-screens with react-navigation in order to [improve memo
   fastlane beta
   ```
 
-**Useful Source**:
+#### Android
+- [Collect your Google Credentials](https://docs.fastlane.tools/getting-started/android/setup/#collect-your-google-credentials)
+- Open your project with Android Studio and update your app's `applicationId` in `build.gradle (Module: app)` file
+- Select `Generated Signed Bundle / APK...` from the `Build` menu
+- `Next` then `Create new...` under `Key store path` then `Next` and `Finish`
+- The first time you deploy your application, you MUST upload it into Google Play Console manually. Google don't allow to use theirs APIs for the first upload.
+- Create your application in the [Google Play Console](https://play.google.com/apps/publish/) (unlike for iOS Fastlane cannot do that for you)
+- Make sure that these 4 checkmark icons are green
+    > Recommended order: `Pricing & distribution`, `Content rating`, `Store listing` and `App releases`
+
+    > You can find the required assets for `Store listing` in the `publishing` folder
+
+
+    ![](https://i.stack.imgur.com/C7vDL.png)
+
+- Initialize fastlane
+  ```bash
+  cd <PROJECT_NAME>/android
+  fastlane init
+  ```
+- Distribute your app
+  ```bash
+  fastlane beta
+  ```
+
+    >  There is no official plugin to automatically upgrade android version code (unlike the iOS lane).
+Before each deployment, be sure to manually upgrade the `versionCode` value inside `android/app/build.gradle`.
+
+#### More
 - Checkout the [Fastlane's beta distribution guide](https://github.com/thecodingmachine/react-native-boilerplate/blob/master/docs/beta%20builds.md) for more details
 - [Fastlane's documentation](https://docs.fastlane.tools/getting-started/cross-platform/react-native/) for React Native
