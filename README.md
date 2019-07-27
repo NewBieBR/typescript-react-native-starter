@@ -113,10 +113,15 @@ This is an opionated configuration for typescript react native project.
   ```
   ./bin/install.sh <PROJECT_NAME>
   ```
+
+#### if (you want to use Codecov) {
 - [Link your github repository with Codecov](https://docs.codecov.io/docs)
 
 - Update your project's informations and the Codecov token `scripts` > `codecov` in `package.json`
 
+#### } else {
+- Change `husky` > `pre-push` to `yarn test` in `package.json`
+#### }
 ## Manual Installation
 
 - Clone this repo
@@ -157,9 +162,14 @@ This is an opionated configuration for typescript react native project.
   rm -rf .git
   ```
 
+#### if (you want to use Codecov) {
 - [Link your github repository with Codecov](https://docs.codecov.io/docs)
 
 - Update your project's informations and the Codecov token `scripts` > `codecov` in `package.json`
+
+#### } else {
+- Change `husky` > `pre-push` to `yarn test` in `package.json`
+#### }
 
 ## Note
 
@@ -202,6 +212,7 @@ You can use react-native-screens with react-navigation in order to [improve memo
 // import { useScreens } from 'react-native-screens';
 // useScreens();
 ```
+
 
 ### Beta distribution with Fastlane
 - Install [fastlane](https://docs.fastlane.tools/getting-started/ios/setup/)
@@ -261,3 +272,12 @@ Before each deployment, be sure to manually upgrade the `versionCode` value insi
 #### More
 - Checkout the [Fastlane's beta distribution guide](https://github.com/thecodingmachine/react-native-boilerplate/blob/master/docs/beta%20builds.md) for more details
 - [Fastlane's documentation](https://docs.fastlane.tools/getting-started/cross-platform/react-native/) for React Native
+
+### Apple Store Connect's missing compliance
+If you dont' use Fastlane and you don't want to *Provide Export Compliance Information* at **every push** , then add this to your `Info.plist`
+```plist
+<key>ITSAppUsesNonExemptEncryption</key>
+<false/>
+```
+![](https://i.stack.imgur.com/i7ret.png)
+Note that you might have to set that to `<true/>` if your [app uses encryption](https://developer.apple.com/documentation/bundleresources/information_property_list/itsappusesnonexemptencryption)
