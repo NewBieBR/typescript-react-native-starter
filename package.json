@@ -4,7 +4,7 @@
   "private": false,
   "description": "A Typescript React Native boilerplate to start your project quickly",
   "author": "Hung Dao <arthur_dao@icloud.com>",
-  "license": "MITs",
+  "license": "MIT",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest --verbose --coverage",
