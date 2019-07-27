@@ -5,11 +5,11 @@ BREW_CMD=$(which brew)
 if [[ $# -ge 1 ]]
 then
     projectName="$1"
+    rm -rf .git
     yarn
     yarn rename $projectName
     yarn jetify
     cd ios && pod install
-    rm -rf .git
     if [[ ! -z $YUM_CMD ]]; then
         sudo yum install imagemagick
     elif [[ ! -z $APT_GET_CMD ]]; then
