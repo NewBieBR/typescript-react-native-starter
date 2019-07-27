@@ -109,13 +109,13 @@ This is an opionated configuration for typescript react native project.
   ```
   cd <PROJECT_NAME>
   ```
-- Execute command
+- Execute the installtion script
   ```
   ./bin/install.sh <PROJECT_NAME>
   ```
 - [Link your github repository with Codecov](https://docs.codecov.io/docs)
 
-- Update the token in `package.json` > scripts > codecov
+- Update your project's informations and the Codecov token `scripts` > `codecov` in `package.json`
 
 ## Manual Installation
 
@@ -159,7 +159,7 @@ This is an opionated configuration for typescript react native project.
 
 - [Link your github repository with Codecov](https://docs.codecov.io/docs)
 
-- Update the token in `package.json` > scripts > codecov
+- Update your project's informations and the Codecov token `scripts` > `codecov` in `package.json`
 
 ## Note
 
