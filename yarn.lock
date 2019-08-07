@@ -6037,6 +6037,11 @@ react-native-localization@^2.1.2:
   dependencies:
     react-localization "^1.0.14"
 
+react-native-normalize@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-normalize/-/react-native-normalize-1.0.1.tgz#52de71d1b86dd357c6f40fd4ab84b10336f0f072"
+  integrity sha512-QYs95xhARhlcWWcDC77r4nVfxa3pDSfIBx2gdYZ+DOcLhSdPzRHFivWbGu3mL01JcvE69pMK7BmbPCda28vXwA==
+
 react-native-rename@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/react-native-rename/-/react-native-rename-2.4.1.tgz#54256367b0375ae49f5026b35914d5ba2a229221"

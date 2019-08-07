@@ -47,6 +47,7 @@ This is an opionated configuration for typescript react native project.
   - [react-native-localization](https://github.com/stefalda/ReactNativeLocalization): easy to use package for i18n
 
 - **Others**
+  - [React Native Normalize](https://github.com/NewBieBR/react-native-normalize): make your app responsive easily
   - [Cocoapods](https://github.com/CocoaPods/CocoaPods): iOS dependencies manager
   - [jetifier](https://github.com/mikehardy/jetifier#readme): transition tool for [React Native 0.60 AndroidX migration](https://facebook.github.io/react-native/blog/2019/07/03/version-60#androidx-support)
   - [autobind-decorator](https://github.com/andreypopp/autobind-decorator#readme): bind your component's functions easily with a decorator
@@ -172,6 +173,17 @@ This is an opionated configuration for typescript react native project.
 #### }
 
 ## Note
+
+### Responsiveness with React Native Normalize
+
+Use the **normalize** functio from react-native-normalize whenever you have to use a *hard value* (100, 200, 1000,...). This function will adapt your value accordingly to different screen sizes
+
+### Without `normalize`
+![](https://i.imgur.com/bLbnjsC.jpg)
+
+### With `normalize`
+![](https://i.imgur.com/4IqqAR2.jpg)
+
 
 ### NavigationService
 
