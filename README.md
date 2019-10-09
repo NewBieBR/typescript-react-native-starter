@@ -26,7 +26,7 @@ This is an opionated configuration for typescript react native project.
   - [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux
 
 - **Navigation**
-  - [React Navivation](https://github.com/react-navigation/react-navigation): easy-to-use navigation solution based on Javascript
+  - [React Navigation](https://github.com/react-navigation/react-navigation): easy-to-use navigation solution based on Javascript
 
 - **Unit testing**
   - Unit tests with [Jest](https://github.com/facebook/jest), [Enzyme](https://github.com/airbnb/enzyme) and [react-native-testing-library](https://github.com/callstack/react-native-testing-library)
@@ -41,7 +41,7 @@ This is an opionated configuration for typescript react native project.
 
 - **Linting**
   - Tslint configured with Airbnb styles
-  - Vscode Prettier compatible
+  - VSCode Prettier compatible
 
 - **Internationalization and localization**
   - [react-native-localization](https://github.com/stefalda/ReactNativeLocalization): easy to use package for i18n
