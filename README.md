@@ -105,7 +105,7 @@ This is an opionated configuration for typescript react native project.
 
 - Clone this repo
   ```
-  git clone git@github.com:NewBieBR/typescript-react-native.git <PROJECT_NAME>
+  git clone git@github.com:NewBieBR/typescript-react-native-starter.git <PROJECT_NAME>
   ```
   ```
   cd <PROJECT_NAME>
@@ -128,7 +128,7 @@ This is an opionated configuration for typescript react native project.
 - Clone this repo
 
   ```
-  git clone git@github.com:NewBieBR/typescript-react-native.git <PROJECT_NAME>
+  git clone git@github.com:NewBieBR/typescript-react-native-starter.git <PROJECT_NAME>
   ```
 
   ```
