@@ -293,3 +293,30 @@ If you dont' use Fastlane and you don't want to *Provide Export Compliance Infor
 ```
 ![](https://i.stack.imgur.com/i7ret.png)
 Note that you might have to set that to `<true/>` if your [app uses encryption](https://developer.apple.com/documentation/bundleresources/information_property_list/itsappusesnonexemptencryption)
+
+
+### Patch Package
+
+When developing with React Native, sometimes I found bugs in the packages that I use so I fix them directly in the *node_modules/package-with-bug*. However, when I install a new package with *npm install*, the changes I made got override.
+
+To prevent this, I use  [patch-package](https://github.com/ds300/patch-package) which allows me to modify and keep the changes I made.
+
+> So no more waiting around for pull requests to be merged and published. No more forking repos just to fix that one tiny thing preventing your app from working.
+
+Example:
+
+```
+# fix a bug in one of your dependencies
+vim node_modules/some-package/brokenFile.js
+
+# run patch-package to create a .patch file
+npx patch-package some-package
+
+# commit the patch file to share the fix with your team
+git add patches/some-package+3.14.15.patch
+git commit -m "fix brokenFile.js in some-package"
+```
+
+### React Native Extended Stylesheet
+
+[react-native-extended-stylesheet](https://github.com/vitalets/react-native-extended-stylesheet) is a drop-in replacement of React Native StyleSheet with media-queries, variables, dynamic themes, relative units, percents, math operations, scaling and other styling stuff.
