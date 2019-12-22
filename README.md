@@ -114,15 +114,17 @@ This is an opionated configuration for typescript react native project.
   ```
   ./bin/install.sh <PROJECT_NAME>
   ```
+    > The script will rename, jetify your project, install imagemagick for app-icon generator, change husky pre-push to 'yarn test' instead of 'yarn codecov'
 
 #### if (you want to use Codecov) {
 - [Link your github repository with Codecov](https://docs.codecov.io/docs)
 
 - Update your project's informations and the Codecov token `scripts` > `codecov` in `package.json`
 
-#### } else {
-- Change `husky` > `pre-push` to `yarn test` in `package.json`
+- Change `husky` > `pre-push` to `yarn codecov` in `package.json`
+
 #### }
+
 ## Manual Installation
 
 - Clone this repo

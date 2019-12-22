@@ -3,6 +3,7 @@ YUM_CMD=$(which yum)
 APT_GET_CMD=$(which apt-get)
 BREW_CMD=$(which brew)
 IMAGEMAGICK_CMD=$(which imagemagick)
+sed -i '' 's/yarn codecov/yarn test/g' package.json
 if [[ $# -ge 1 ]]
 then
     projectName="$1"
@@ -23,7 +24,7 @@ then
             exit 1;
         fi
     fi
-    echo -e "\033[33m> [ Remember to change the Codecov token in package.json > scripts > codecov ] \033[0m"
+    echo -e "\033[33m> [ If you want to use Codecov, remember to change the Codecov token in package.json > scripts > codecov ] \033[0m"
 else
     echo USAGE
     echo "	$0 <ProjectName>"
