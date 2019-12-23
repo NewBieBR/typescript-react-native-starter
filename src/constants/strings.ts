@@ -11,4 +11,4 @@ const Strings = new LocalizedStrings({
   },
 });
 
-export default strings;
+export default Strings;
