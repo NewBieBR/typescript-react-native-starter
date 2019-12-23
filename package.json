@@ -17,7 +17,8 @@
     "lint": "tslint --project tsconfig.json -q -e \"coverage/**\"",
     "rename": "react-native-rename",
     "jetify": "npx jetify",
-    "icon": "npx app-icon generate -i publishing/icon.png"
+    "icon": "npx app-icon generate -i publishing/icon.png",
+    "setup": "./bin/install.sh $1"
   },
   "husky": {
     "hooks": {

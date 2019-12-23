@@ -112,7 +112,7 @@ This is an opionated configuration for typescript react native project.
   ```
 - Execute the installtion script
   ```
-  ./bin/install.sh <PROJECT_NAME>
+    yarn setup <PROJECT_NAME>
   ```
     > The script will rename, jetify your project, install imagemagick for app-icon generator, change husky pre-push to 'yarn test' instead of 'yarn codecov'
 
