@@ -14,7 +14,7 @@
         "prefer-const": true,
         "no-var-keyword": true,
         "object-literal-shorthand": true,
-        "object-shorthand-properties-first": true,
+        "object-shorthand-properties-first": false,
         "object-literal-key-quotes": [
             true,
             "as-needed"
@@ -39,7 +39,6 @@
         "no-parameter-reassignment": true,
         "align": [
             true,
-            "arguments",
             "parameters"
         ],
         "ter-prefer-arrow-callback": [
@@ -50,7 +49,7 @@
             true,
             "as-needed",
             {
-                "requireForBlockBody": true
+                "requireForBlockBody": false
             }
         ],
         "no-duplicate-imports": true,
@@ -137,7 +136,8 @@
         "radix": true,
         "variable-name": [
             true,
-            "check-format"
+            "check-format",
+            "allow-pascal-case"
         ],
         "class-name": true,
         "no-this-assignment": [

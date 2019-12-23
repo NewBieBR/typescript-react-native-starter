@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import VersionNumber from 'react-native-version-number';
 import {
   NavigationParams,
   NavigationScreenProp,
   NavigationState,
 } from 'react-navigation';
 import { connect } from 'react-redux';
-import { setAppVersion, updateStoreState } from '../actions/app';
+import { fetchUser } from '../actions/users';
 import strings from '../constants/strings';
+import { User } from '../types';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -17,29 +17,14 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 export interface Props {
-  updateStoreState: typeof updateStoreState;
-  setAppVersion: typeof setAppVersion;
-  version: string;
-  buildVersion: string;
+  fetchUser: typeof fetchUser;
+  user: User;
   navigation: NavigationScreenProp<NavigationState, NavigationParams>;
 }
 
 export class Home extends Component<Props> {
   componentDidMount() {
-    this.checkAppVersion();
-  }
-
-  checkAppVersion() {
-    if (
-      this.props.version !== VersionNumber.appVersion ||
-      this.props.buildVersion !== VersionNumber.buildVersion
-    ) {
-      this.props.updateStoreState();
-      this.props.setAppVersion({
-        version: VersionNumber.appVersion,
-        buildVersion: VersionNumber.buildVersion,
-      });
-    }
+    this.props.fetchUser('1');
   }
 
   render() {
@@ -56,13 +41,11 @@ export class Home extends Component<Props> {
 }
 
 const mapStateToProps = (state: any) => ({
-  version: state.app.version,
-  buildVersion: state.app.buildVersion,
+  user: state.users.user,
 });
 
 const mapDispatchToProps = {
-  updateStoreState,
-  setAppVersion,
+  fetchUser,
 };
 
 export default connect(
