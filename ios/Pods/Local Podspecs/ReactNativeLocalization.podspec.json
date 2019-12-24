@@ -1,13 +1,13 @@
 {
   "name": "ReactNativeLocalization",
-  "version": "2.1.4",
+  "version": "2.1.6",
   "summary": "Simple module to localize the ReactNative interface",
-  "homepage": "https://github.com/sfalda/ReactNativeLocalization",
+  "homepage": "https://github.com/stefalda/ReactNativeLocalization",
   "license": "MIT",
   "authors": "Stefano Falda <stefano.falda@gmail.com> (http://www.babisoft.com)",
   "source": {
     "git": "https://github.com/stefalda/ReactNativeLocalization.git",
-    "tag": "v2.1.4"
+    "tag": "v2.1.6"
   },
   "platforms": {
     "ios": "8.0",
@@ -16,7 +16,8 @@
   "preserve_paths": [
     "README.md",
     "LICENSE",
-    "package.json"
+    "package.json",
+    "lib"
   ],
   "source_files": "ios/*.{h,m}",
   "dependencies": {

@@ -7,7 +7,7 @@ import {
 } from 'react-navigation';
 import { connect } from 'react-redux';
 import { fetchUser } from '../actions/users';
-import strings from '../constants/strings';
+import Strings from '../constants/strings';
 import { User } from '../types';
 
 const instructions = Platform.select({
@@ -31,7 +31,7 @@ export class Home extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          {strings.hello}. Welcome to React Native!
+          {Strings.hello}. Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>To get started, edit Home.tsx</Text>
         <Text style={styles.instructions}>{instructions}</Text>

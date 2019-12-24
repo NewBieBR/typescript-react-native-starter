@@ -11,7 +11,7 @@ then
     yarn
     yarn rename $projectName
     yarn jetify
-    cd ios && pod install
+    cd ios && rm -rf Pods && pod install
     if [[ ! -z $IMAGEMAGICK_CMD ]]; then
         if [[ ! -z $YUM_CMD ]]; then
             sudo yum install imagemagick

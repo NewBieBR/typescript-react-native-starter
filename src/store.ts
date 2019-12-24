@@ -1,6 +1,6 @@
+import AsyncStorage from '@react-native-community/async-storage';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 import createSagaMiddleware from 'redux-saga';
 import appReducer from './reducers/app';
 import usersReducer from './reducers/users';
@@ -20,7 +20,7 @@ export const rootReducer = combineReducers(reducers);
  *--------------------------------------------------*
  */
 const persistConfig = {
-  storage,
+  storage: AsyncStorage,
   key: 'root',
 };
 

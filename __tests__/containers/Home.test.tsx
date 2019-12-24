@@ -23,13 +23,31 @@ jest.mock('../../src/actions/users', () => {
   };
 });
 
-jest.mock('NativeModules', () => {
-  return {
-    ReactLocalization: {
-      language: 'en',
+jest.mock(
+  'react-native-localization',
+  () =>
+    class RNLocalization {
+      language = 'en';
+      props: any;
+
+      constructor(props) {
+        this.props = props;
+        this.setLanguage(this.language);
+      }
+
+      setLanguage(interfaceLanguage) {
+        this.language = interfaceLanguage;
+        if (this.props[interfaceLanguage]) {
+          const localizedStrings = this.props[this.language];
+          for (const key in localizedStrings) {
+            if (localizedStrings.hasOwnProperty(key)) {
+              this[key] = localizedStrings[key];
+            }
+          }
+        }
+      }
     },
-  };
-});
+);
 
 describe('Home', () => {
   const fetchUser = jest.fn();
