@@ -174,30 +174,18 @@ This is an opionated configuration for typescript react native project.
 - Change `husky` > `pre-push` to `yarn test` in `package.json`
 #### }
 
-## Note
+## Useful tips
 
 ### Responsiveness with React Native Normalize
 
 Use the **normalize** functio from react-native-normalize whenever you have to use a *hard value* (100, 200, 1000,...). This function will adapt your value accordingly to different screen sizes
 
 ### Without `normalize`
-![](https://i.imgur.com/bLbnjsC.jpg)
+
+<img src="https://i.imgur.com/bLbnjsC.jpg" height="250"/>
 
 ### With `normalize`
-![](https://i.imgur.com/4IqqAR2.jpg)
-
-
-### NavigationService
-
-You can [navigate without navigation prop](https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html) by using **NavigationService** from `src/lib/NavigationService.ts`
-
-```typescript
-import NavigationService from '../lib/NavigationService';
-
-//...
-
-NavigationService.navigate('ChatScreen', { userName: 'Lucy' });
-```
+<img src="https://i.imgur.com/4IqqAR2.jpg" height="250"/>
 
 ### Cocoapod
 
@@ -225,6 +213,57 @@ You can use react-native-screens with react-navigation in order to [improve memo
 ```javascript
 // import { useScreens } from 'react-native-screens';
 // useScreens();
+```
+
+### Apple Store Connect's missing compliance
+If you dont' use Fastlane and you don't want to *Provide Export Compliance Information* at **every push** , then add this to your `Info.plist`
+```plist
+<key>ITSAppUsesNonExemptEncryption</key>
+<false/>
+```
+
+<img src="https://i.stack.imgur.com/i7ret.png" height="100">
+
+Note that you might have to set that to `<true/>` if your [app uses encryption](https://developer.apple.com/documentation/bundleresources/information_property_list/itsappusesnonexemptencryption)
+
+
+### React Native Extended Stylesheet
+
+[react-native-extended-stylesheet](https://github.com/vitalets/react-native-extended-stylesheet) is a drop-in replacement of React Native StyleSheet with media-queries, variables, dynamic themes, relative units, percents, math operations, scaling and other styling stuff.
+
+
+### Patch Package
+
+When developing with React Native, sometimes I found bugs in the packages that I use so I fix them directly in the *node_modules/package-with-bug*. However, when I install a new package with *npm install*, the changes I made got override.
+
+To prevent this, I use  [patch-package](https://github.com/ds300/patch-package) which allows me to modify and keep the changes I made.
+
+> So no more waiting around for pull requests to be merged and published. No more forking repos just to fix that one tiny thing preventing your app from working.
+
+Example:
+
+```
+# fix a bug in one of your dependencies
+vim node_modules/some-package/brokenFile.js
+
+# run patch-package to create a .patch file
+npx patch-package some-package
+
+# commit the patch file to share the fix with your team
+git add patches/some-package+3.14.15.patch
+git commit -m "fix brokenFile.js in some-package"
+```
+
+### NavigationService
+
+You can [navigate without navigation prop](https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html) by using **NavigationService** from `src/lib/NavigationService.ts`
+
+```typescript
+import NavigationService from '../lib/NavigationService';
+
+//...
+
+NavigationService.navigate('ChatScreen', { userName: 'Lucy' });
 ```
 
 
@@ -263,7 +302,7 @@ You can use react-native-screens with react-navigation in order to [improve memo
     > You can find the required assets for `Store listing` in the `publishing/android` folder
 
 
-    ![](https://i.stack.imgur.com/C7vDL.png)
+    <img src="https://i.stack.imgur.com/C7vDL.png" height="250"/>
 
 - Initialize fastlane
   ```bash
@@ -286,39 +325,3 @@ Before each deployment, be sure to manually upgrade the `versionCode` value insi
 #### More
 - Checkout the [Fastlane's beta distribution guide](https://github.com/thecodingmachine/react-native-boilerplate/blob/master/docs/beta%20builds.md) for more details
 - [Fastlane's documentation](https://docs.fastlane.tools/getting-started/cross-platform/react-native/) for React Native
-
-### Apple Store Connect's missing compliance
-If you dont' use Fastlane and you don't want to *Provide Export Compliance Information* at **every push** , then add this to your `Info.plist`
-```plist
-<key>ITSAppUsesNonExemptEncryption</key>
-<false/>
-```
-![](https://i.stack.imgur.com/i7ret.png)
-Note that you might have to set that to `<true/>` if your [app uses encryption](https://developer.apple.com/documentation/bundleresources/information_property_list/itsappusesnonexemptencryption)
-
-
-### Patch Package
-
-When developing with React Native, sometimes I found bugs in the packages that I use so I fix them directly in the *node_modules/package-with-bug*. However, when I install a new package with *npm install*, the changes I made got override.
-
-To prevent this, I use  [patch-package](https://github.com/ds300/patch-package) which allows me to modify and keep the changes I made.
-
-> So no more waiting around for pull requests to be merged and published. No more forking repos just to fix that one tiny thing preventing your app from working.
-
-Example:
-
-```
-# fix a bug in one of your dependencies
-vim node_modules/some-package/brokenFile.js
-
-# run patch-package to create a .patch file
-npx patch-package some-package
-
-# commit the patch file to share the fix with your team
-git add patches/some-package+3.14.15.patch
-git commit -m "fix brokenFile.js in some-package"
-```
-
-### React Native Extended Stylesheet
-
-[react-native-extended-stylesheet](https://github.com/vitalets/react-native-extended-stylesheet) is a drop-in replacement of React Native StyleSheet with media-queries, variables, dynamic themes, relative units, percents, math operations, scaling and other styling stuff.
