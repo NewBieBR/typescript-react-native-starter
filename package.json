@@ -8,6 +8,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:ios": "open ./ios/*.xcworkspace && yarn start",
+    "open:ios": "open ./ios/*.xcworkspace",
+    "open:android": "open -a '/Applications/Android Studio.app'",
     "start:android": "open -a '/Applications/Android Studio.app' ./android && yarn start",
     "test": "jest --verbose --coverage",
     "test:update": "jest --verbose --coverage --updateSnapshot",
