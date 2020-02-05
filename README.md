@@ -6,6 +6,17 @@
 
 This is an opionated configuration for typescript react native project.
 
+## Quick Start
+
+```bash
+yarn global add trnc
+```
+
+```bash
+trnc init <ProjectName>
+```
+
+
 ## Features
 
 - **Typescript**
