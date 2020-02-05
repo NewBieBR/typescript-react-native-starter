@@ -7,7 +7,7 @@ sed -i '' 's/yarn codecov/yarn test/g' package.json
 if [[ $# -ge 1 ]]
 then
     projectName="$1"
-    rm -rf .git
+    rm -rf .git CODE_OF_CONDUCT.md CONTRIBUTING.md LICENSE README.md
     yarn
     yarn rename $projectName
     yarn jetify
