@@ -6,25 +6,29 @@ import appReducer from './reducers/app';
 import usersReducer from './reducers/users';
 import sagas from './sagas';
 
-export const reducers = {
-  app: appReducer,
-  users: usersReducer,
-};
-
-export const rootReducer = combineReducers(reducers);
-
 /*
  *--------------------------------------------------*
  * Persist config documentation
  * https://github.com/rt2zz/redux-persist/blob/master/src/types.js#L13-L27
  *--------------------------------------------------*
  */
-const persistConfig = {
+
+const appPersistConfig = {
   storage: AsyncStorage,
-  key: 'root',
+  key: 'app',
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const userPersistConfig = {
+  storage: AsyncStorage,
+  key: 'user',
+};
+
+export const reducers = {
+  app: persistReducer(appPersistConfig, appReducer),
+  users: persistReducer(userPersistConfig, usersReducer),
+};
+
+export const rootReducer = combineReducers(reducers);
 
 // tslint:disable-next-line: no-shadowed-variable
 const appMiddleware = (store: any) => (next: (arg0: any) => void) => (
@@ -44,7 +48,7 @@ const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware, appMiddleware];
 const enhancers = [applyMiddleware(...middlewares)];
 
-export const store = createStore(persistedReducer, compose(...enhancers));
+export const store = createStore(rootReducer, compose(...enhancers));
 
 sagaMiddleware.run(sagas);
 
