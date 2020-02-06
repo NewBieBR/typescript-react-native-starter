@@ -185,7 +185,22 @@ trnc init <ProjectName>
 - Change `husky` > `pre-push` to `yarn test` in `package.json`
 #### }
 
-## Useful tips
+## Useful Tips & Notes
+
+### Apple Store Connect's missing compliance
+This is added to your `Info.plist` in order to avoid Apple Store Connect's missing compliance warning.
+
+```plist
+<key>ITSAppUsesNonExemptEncryption</key>
+<false/>
+```
+So you don't have to *Provide Export Compliance Information* at **every push**,
+
+
+<img src="https://i.stack.imgur.com/i7ret.png" height="100">
+
+> Note that you might have to set that to `<true/>` if your [app uses encryption](https://developer.apple.com/documentation/bundleresources/information_property_list/itsappusesnonexemptencryption)
+
 
 ### Responsiveness with React Native Normalize
 
@@ -225,18 +240,6 @@ You can use react-native-screens with react-navigation in order to [improve memo
 // import { useScreens } from 'react-native-screens';
 // useScreens();
 ```
-
-### Apple Store Connect's missing compliance
-If you dont' use Fastlane and you don't want to *Provide Export Compliance Information* at **every push** , then add this to your `Info.plist`
-```plist
-<key>ITSAppUsesNonExemptEncryption</key>
-<false/>
-```
-
-<img src="https://i.stack.imgur.com/i7ret.png" height="100">
-
-Note that you might have to set that to `<true/>` if your [app uses encryption](https://developer.apple.com/documentation/bundleresources/information_property_list/itsappusesnonexemptencryption)
-
 
 ### React Native Extended Stylesheet
 
