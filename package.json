@@ -1,9 +1,9 @@
 {
   "name": "typescript-react-native-starter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "A Typescript React Native boilerplate to start your project quickly",
-  "author": "Hung Dao <arthur_dao@icloud.com>",
+  "author": "Hung Arthur Dao <arthur_dao@icloud.com>",
   "license": "MIT",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",

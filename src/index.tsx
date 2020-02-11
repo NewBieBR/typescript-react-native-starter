@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-// import { useScreens } from 'react-native-screens';
+// import { enableScreens } from 'react-native-screens';
 import { createAppContainer } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
@@ -8,7 +8,7 @@ import App from './App';
 import NavigationService from './lib/NavigationService';
 import { persistor, store } from './store';
 
-// useScreens();
+// enableScreens();
 
 // tslint:disable-next-line: variable-name
 const AppContainer = createAppContainer(App);

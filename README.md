@@ -112,7 +112,7 @@ trnc init <ProjectName>
     └── utils                            // Utilities
 ```
 
-## Installation
+## Installation without [trnc](https://github.com/NewBieBR/typescript-react-native-starter#quick-start)
 
 - Clone this repo
   ```
@@ -125,7 +125,7 @@ trnc init <ProjectName>
   ```
     yarn setup <PROJECT_NAME>
   ```
-    > The script will rename, jetify your project, install imagemagick for app-icon generator, change husky pre-push to 'yarn test' instead of 'yarn codecov'
+    > The script will rename, jetify your project, install imagemagick for app-icon generator, change husky pre-push to 'yarn test' instead of 'yarn codecov, delete README, CODE_OF_CONDUCT, CONTRIBUTING and LICENSE'
 
 #### if (you want to use Codecov) {
 - [Link your github repository with Codecov](https://docs.codecov.io/docs)
@@ -213,16 +213,6 @@ Use the **normalize** functio from react-native-normalize whenever you have to u
 ### With `normalize`
 <img src="https://i.imgur.com/4IqqAR2.jpg" height="250"/>
 
-### Cocoapod
-
-When you run `react-native link` and the linked library has podspec file, then the linking will use Podfile. To disable this feature, remove
-
-```ruby
-# Add new pods below this line
-```
-
-from line 24 in `ios/Podfile`
-
 ### Static bundle
 
 The static bundle is built every time you target a physical device, even in Debug. To save time, the bundle generation [is disabled in Debug](https://facebook.github.io/react-native/docs/running-on-device)
@@ -237,8 +227,8 @@ You can use react-native-screens with react-navigation in order to [improve memo
 - Open `./src/index.tsx` and uncomment
 
 ```javascript
-// import { useScreens } from 'react-native-screens';
-// useScreens();
+// import { enableScreens } from 'react-native-screens';
+// enableScreens();
 ```
 
 ### React Native Extended Stylesheet
@@ -339,3 +329,14 @@ Before each deployment, be sure to manually upgrade the `versionCode` value insi
 #### More
 - Checkout the [Fastlane's beta distribution guide](https://github.com/thecodingmachine/react-native-boilerplate/blob/master/docs/beta%20builds.md) for more details
 - [Fastlane's documentation](https://docs.fastlane.tools/getting-started/cross-platform/react-native/) for React Native
+
+
+### Cocoapod
+
+When you run `react-native link` and the linked library has podspec file, then the linking will use Podfile. To disable this feature, remove
+
+```ruby
+# Add new pods below this line
+```
+
+from line 24 in `ios/Podfile`

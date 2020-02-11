@@ -3,10 +3,11 @@ YUM_CMD=$(which yum)
 APT_GET_CMD=$(which apt-get)
 BREW_CMD=$(which brew)
 IMAGEMAGICK_CMD=$(which imagemagick)
+projectName="$1"
 sed -i '' 's/yarn codecov/yarn test/g' package.json
+sed -i '' "s/typescript-react-native-starter/$projectName/g" package.json
 if [[ $# -ge 1 ]]
 then
-    projectName="$1"
     rm -rf .git CODE_OF_CONDUCT.md CONTRIBUTING.md LICENSE README.md
     yarn
     yarn rename $projectName
