@@ -3,7 +3,7 @@ import {
   fetchUser,
   fetchUserFailure,
   fetchUserSuccess,
-} from '../../src/actions/users';
+} from '../../src/actions/usersActions';
 
 test('should fetchUser', () => {
   const payload = '1';
