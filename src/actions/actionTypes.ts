@@ -2,7 +2,7 @@
  *--------------------------------------------------*
  * Example:
  * APP = {
- * 	UPDATE_STORE_STATE: 'APP/UPDATE_STORE_STATE'
+ * 	SET_STORE_STATE: 'APP/SET_STORE_STATE'
  * }
  *--------------------------------------------------*
  */
@@ -12,7 +12,7 @@ function createActionTypes(base: string, types: string[]) {
   return res;
 }
 
-export const APP = createActionTypes('APP', ['UPDATE_STORE_STATE']);
+export const APP = createActionTypes('APP', ['SET_STORE_STATE']);
 
 export const USER = createActionTypes('USER', [
   'FETCH',

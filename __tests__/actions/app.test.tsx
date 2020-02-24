@@ -1,8 +1,8 @@
 import * as types from '../../src/actions/actionTypes';
-import { updateStoreState } from '../../src/actions/appActions';
+import { setStoreState } from '../../src/actions/appActions';
 
-test('should updateStoreState', () => {
-  expect(updateStoreState()).toMatchObject({
-    type: types.APP.UPDATE_STORE_STATE,
+test('should setStoreState', () => {
+  expect(setStoreState()).toMatchObject({
+    type: types.APP.SET_STORE_STATE,
   });
 });
