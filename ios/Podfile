@@ -36,6 +36,8 @@ target 'TypescriptReactNativeStarter' do
 
   pod 'ReactNativeLocalization', :path => '../node_modules/react-native-localization'
 
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+
   target 'TypescriptReactNativeStarterTests' do
     inherit! :search_paths
     # Pods for testing

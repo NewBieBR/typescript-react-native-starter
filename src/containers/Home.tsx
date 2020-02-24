@@ -1,12 +1,10 @@
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { RouteProp } from '@react-navigation/native';
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import {
-  NavigationParams,
-  NavigationScreenProp,
-  NavigationState,
-} from 'react-navigation';
 import { connect } from 'react-redux';
 import { fetchUser } from '../actions/usersActions';
+import { AppTabParamList } from '../App';
 import Strings from '../constants/strings';
 import { User } from '../types';
 
@@ -16,13 +14,15 @@ const instructions = Platform.select({
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
-export interface Props {
+
+export interface HomeProps {
   fetchUser: typeof fetchUser;
   user: User;
-  navigation: NavigationScreenProp<NavigationState, NavigationParams>;
+  navigation: BottomTabNavigationProp<AppTabParamList, 'Home'>;
+  route: RouteProp<AppTabParamList, 'Home'>;
 }
 
-export class Home extends Component<Props> {
+export class Home extends Component<HomeProps> {
   componentDidMount() {
     this.props.fetchUser('1');
   }

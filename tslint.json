@@ -15,6 +15,7 @@
     "prefer-const": true,
     "no-var-keyword": true,
     "object-literal-shorthand": true,
+    "interface-over-type-literal": false,
     "object-shorthand-properties-first": false,
     "object-literal-key-quotes": [true, "as-needed"],
     "prefer-array-literal": [true, { "allow-type-parameters": true }],
