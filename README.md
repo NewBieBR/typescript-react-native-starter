@@ -59,6 +59,23 @@ trnc init <ProjectName>
 
 - **Others**
   - [react-native-normalize](https://github.com/NewBieBR/react-native-normalize): make your app responsive easily
+  - [react-native-easy-icon](https://github.com/NewBieBR/react-native-easy-icon#readme): wrapper component of [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) for easier usage:
+
+    Before:
+    ```JSX
+    import AntDesignIcon from 'react-native-vector-icons/AntDesign';
+
+    <AntDesignIcon name="home" color="blue" size={42}/>
+
+    ```
+
+    After:
+    ```JSX
+    import Icon from 'react-native-easy-icon';
+
+    <Icon type="antdesign" name="home" color="blue" size={42}/>
+    ```
+
   - [Cocoapods](https://github.com/CocoaPods/CocoaPods): iOS dependencies manager
   - [jetifier](https://github.com/mikehardy/jetifier#readme): transition tool for [React Native 0.60 AndroidX migration](https://facebook.github.io/react-native/blog/2019/07/03/version-60#androidx-support)
   - [autobind-decorator](https://github.com/andreypopp/autobind-decorator#readme): bind your component's functions easily with a decorator
