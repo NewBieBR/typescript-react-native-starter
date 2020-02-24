@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import * as types from '../actions/actionTypes';
-import { fetchUserFailure, fetchUserSuccess } from '../actions/users';
+import { fetchUserFailure, fetchUserSuccess } from '../actions/usersActions';
 import JSONPlaceholderAPI from '../lib/jsonPlaceholderAPI';
 import { BaseAction } from '../types';
 

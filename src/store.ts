@@ -2,11 +2,11 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
-import appReducer from './reducers/app';
-import usersReducer from './reducers/users';
+import appReducer from './reducers/appReducer';
+import usersReducer from './reducers/usersReducer';
 import sagas from './sagas';
 
-/*
+/*ß
  *--------------------------------------------------*
  * Persist config documentation
  * https://github.com/rt2zz/redux-persist/blob/master/src/types.js#L13-L27

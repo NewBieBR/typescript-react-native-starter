@@ -6,7 +6,7 @@ import {
   NavigationState,
 } from 'react-navigation';
 import { connect } from 'react-redux';
-import { fetchUser } from '../actions/users';
+import { fetchUser } from '../actions/usersActions';
 import Strings from '../constants/strings';
 import { User } from '../types';
 
@@ -48,10 +48,7 @@ const mapDispatchToProps = {
   fetchUser,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 const styles = StyleSheet.create({
   container: {

@@ -58,7 +58,7 @@ trnc init <ProjectName>
   - [react-native-localization](https://github.com/stefalda/ReactNativeLocalization): easy to use package for i18n
 
 - **Others**
-  - [React Native Normalize](https://github.com/NewBieBR/react-native-normalize): make your app responsive easily
+  - [react-native-normalize](https://github.com/NewBieBR/react-native-normalize): make your app responsive easily
   - [Cocoapods](https://github.com/CocoaPods/CocoaPods): iOS dependencies manager
   - [jetifier](https://github.com/mikehardy/jetifier#readme): transition tool for [React Native 0.60 AndroidX migration](https://facebook.github.io/react-native/blog/2019/07/03/version-60#androidx-support)
   - [autobind-decorator](https://github.com/andreypopp/autobind-decorator#readme): bind your component's functions easily with a decorator
@@ -88,6 +88,7 @@ trnc init <ProjectName>
 ├── android
 ├── app.json
 ├── assets                               // All assets: images, videos, ...
+├── credentials                          // Private informations: API keys,...
 ├── index.js
 ├── ios
 ├── publishing                           // Icon, screenshots, preview,... for App Store & Play Store
@@ -202,7 +203,7 @@ So you don't have to *Provide Export Compliance Information* at **every push**,
 > Note that you might have to set that to `<true/>` if your [app uses encryption](https://developer.apple.com/documentation/bundleresources/information_property_list/itsappusesnonexemptencryption)
 
 
-### Responsiveness with React Native Normalize
+### Responsiveness with react-native-normalize
 
 Use the **normalize** functio from react-native-normalize whenever you have to use a *hard value* (100, 200, 1000,...). This function will adapt your value accordingly to different screen sizes
 
