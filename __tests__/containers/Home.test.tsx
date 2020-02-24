@@ -17,7 +17,7 @@ jest.mock('react-redux', () => {
     connect: jest.fn().mockReturnValue(() => jest.fn()),
   };
 });
-jest.mock('../../src/actions/users', () => {
+jest.mock('../../src/actions/usersActions', () => {
   return {
     fetchUser: jest.fn().mockReturnValue('mock user action'),
   };
