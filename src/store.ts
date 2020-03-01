@@ -1,5 +1,12 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import {
+  applyMiddleware,
+  combineReducers,
+  compose,
+  createStore,
+  Dispatch,
+  MiddlewareAPI,
+} from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import appReducer from './reducers/appReducer';
@@ -31,7 +38,7 @@ export const reducers = {
 export const rootReducer = combineReducers(reducers);
 
 // tslint:disable-next-line: no-shadowed-variable
-const appMiddleware = (store: any) => (next: (arg0: any) => void) => (
+const appMiddleware = (store: MiddlewareAPI) => (next: Dispatch) => (
   action: any,
 ) => {
   //   var state = store.getState()
