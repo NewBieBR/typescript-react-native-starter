@@ -299,6 +299,8 @@ NavigationService.navigate('ChatScreen', { userName: 'Lucy' });
   brew cask install fastlane
   ```
 
+> If you have issue installing or using fastlane on macos, check this solution: https://github.com/fastlane/fastlane/issues/15467#issuecomment-543093498
+
 #### iOS
 - Open your project Xcode workspace and update your app's `Bundle Identifier` and `Team`
 - Initialize fastlane
