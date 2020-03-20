@@ -4,10 +4,10 @@
 <div align="center">A highly scalable foundation with a focus on best pratices and simplicity to start your React Native project in seconds.</div>
 <br/>
 <div align="center">
-  <a href="https://david-dm.org/react-boilerplate/react-boilerplate">
+  <a href="https://david-dm.org/NewBieBR/typescript-react-native-starter">
     <img src="https://david-dm.org/NewBieBR/typescript-react-native-starter.svg" alt="Dependency Status" />
   </a>
-  <a href="https://david-dm.org/react-boilerplate/react-boilerplate#info=devDependencies">
+  <a href="https://david-dm.org/NewBieBR/typescript-react-native-starter#info=devDependencies">
     <img src="https://david-dm.org/NewBieBR/typescript-react-native-starter/dev-status.svg" alt="devDependency Status" />
   </a>
   <a href="https://opensource.org/licenses/MIT">
