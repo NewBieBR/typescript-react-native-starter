@@ -2,7 +2,8 @@
 # Typescript React Native Starter
 
 <div align="center">This is a highly scalable foundation with a focus on best pratices to start your React Native project in seconds.</div>
-<div align="center>
+<br/>
+<div align="center">
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" />
   </a>
