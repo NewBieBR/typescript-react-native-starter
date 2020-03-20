@@ -29,11 +29,11 @@ trnc init <ProjectName>
 ## Features
 
 - **Typescript**
-  - [React Native's typescript template](https://github.com/react-native-community/react-native-template-typescript) based
+  - [Typescript](https://github.com/microsoft/TypeScript) based: enhance code quality, understandability and scability with `Interface oriented development`
 
 - **Flux State management**
   - [Redux](https://github.com/reduxjs/redux): predictable state container
-  - [Redux Persist](https://github.com/rt2zz/redux-persist): offline store
+  - [Redux Persist](https://github.com/rt2zz/redux-persist): offline and persistent store
   - [typesafe-actions](https://github.com/piotrwitek/typesafe-actions): create typesafe actions easily
 
       ```javascript
