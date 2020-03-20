@@ -4,7 +4,7 @@
 
 # Typescript React Native Starter
 
-This is an opionated configuration for typescript react native project.
+<div align="center">This is a highly scalable foundation with a focus on best pratices to start your React Native project in seconds.</div>
 
 ## Quick Start
 
