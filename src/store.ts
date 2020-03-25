@@ -1,4 +1,7 @@
 import AsyncStorage from '@react-native-community/async-storage';
+import appReducer from '@reducers/appReducer';
+import usersReducer from '@reducers/usersReducer';
+import sagas from '@sagas/index';
 import {
   applyMiddleware,
   combineReducers,
@@ -9,9 +12,6 @@ import {
 } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
-import appReducer from './reducers/appReducer';
-import usersReducer from './reducers/usersReducer';
-import sagas from './sagas';
 
 /*ß
  *--------------------------------------------------*

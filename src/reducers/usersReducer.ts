@@ -1,5 +1,5 @@
 'use strict';
-import { USER } from '../actions/actionTypes';
+import { USER } from '@actions/actionTypes';
 
 const initialState = {
   user: null,

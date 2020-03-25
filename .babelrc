@@ -1,0 +1,29 @@
+{
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "root": [
+                    "."
+                ],
+                "extensions": [
+                    ".ios.js",
+                    ".android.js",
+                    ".js",
+                    ".json"
+                ],
+                "alias": {
+                    "src": "./src",
+                    "@actions": "./src/actions",
+                    "@components": "./src/components",
+                    "@constants": "./src/constants",
+                    "@containers": "./src/containers",
+                    "@lib": "./src/lib",
+                    "@reducers": "./src/reducers",
+                    "@sagas": "./src/sagas",
+                    "@utils": "./src/utils"
+                }
+            }
+        ]
+    ]
+}

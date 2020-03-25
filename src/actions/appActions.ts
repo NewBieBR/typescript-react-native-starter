@@ -1,5 +1,5 @@
+import { AppReducerState } from '@reducers/appReducer';
 import { action } from 'typesafe-actions';
-import { AppReducerState } from '../reducers/appReducer';
 import * as types from './actionTypes';
 
 /**

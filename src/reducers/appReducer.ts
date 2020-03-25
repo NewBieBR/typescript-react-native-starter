@@ -1,5 +1,5 @@
 'use strict';
-import { APP } from '../actions/actionTypes';
+import { APP } from '@actions/actionTypes';
 
 export interface AppReducerState {
   version: string;

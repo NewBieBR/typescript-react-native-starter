@@ -1,5 +1,5 @@
-import * as types from '../../src/actions/actionTypes';
-import { setStoreState } from '../../src/actions/appActions';
+import * as types from '@actions/actionTypes';
+import { setStoreState } from '@actions/appActions';
 
 test('should setStoreState', () => {
   expect(setStoreState()).toMatchObject({

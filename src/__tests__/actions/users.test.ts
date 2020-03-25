@@ -1,9 +1,9 @@
-import * as types from '../../src/actions/actionTypes';
+import * as types from '@actions/actionTypes';
 import {
   fetchUser,
   fetchUserFailure,
   fetchUserSuccess,
-} from '../../src/actions/usersActions';
+} from '@actions/usersActions';
 
 test('should fetchUser', () => {
   const payload = '1';

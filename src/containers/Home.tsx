@@ -1,12 +1,12 @@
+import { fetchUser } from '@actions/usersActions';
+import Strings from '@constants/strings';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { RouteProp } from '@react-navigation/native';
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchUser } from '../actions/usersActions';
-import { AppTabParamList } from '../App';
-import Strings from '../constants/strings';
-import { User } from '../types';
+import { AppTabParamList } from 'src/App';
+import { User } from 'src/types';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',

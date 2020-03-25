@@ -1,8 +1,8 @@
+import { Home } from '@containers/Home';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 import { render } from 'react-native-testing-library';
-import { Home } from '../../src/containers/Home';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -17,7 +17,7 @@ jest.mock('react-redux', () => {
     connect: jest.fn().mockReturnValue(() => jest.fn()),
   };
 });
-jest.mock('../../src/actions/usersActions', () => {
+jest.mock('@actions/usersActions', () => {
   return {
     fetchUser: jest.fn().mockReturnValue('mock user action'),
   };
@@ -30,18 +30,18 @@ jest.mock(
       language = 'en';
       props: any;
 
-      constructor(props) {
+      constructor(props: any) {
         this.props = props;
         this.setLanguage(this.language);
       }
 
-      setLanguage(interfaceLanguage) {
+      setLanguage(interfaceLanguage: any) {
         this.language = interfaceLanguage;
         if (this.props[interfaceLanguage]) {
           const localizedStrings = this.props[this.language];
           for (const key in localizedStrings) {
             if (localizedStrings.hasOwnProperty(key)) {
-              this[key] = localizedStrings[key];
+              (this as any)[key] = localizedStrings[key];
             }
           }
         }

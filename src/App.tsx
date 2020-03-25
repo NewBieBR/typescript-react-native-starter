@@ -1,8 +1,8 @@
+import Home from '@containers/Home';
+import Settings from '@containers/Settings';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import Icon from 'react-native-easy-icon';
-import Home from './containers/Home';
-import Settings from './containers/Settings';
 
 const Tab = createBottomTabNavigator();
 

@@ -97,11 +97,6 @@ trnc init <ProjectName>
 ## Project Structure
 
 ```
-├── __tests__                            // Unit tests
-│   ├── App.test.tsx                     // App component's tests
-│   ├── components
-│   │   └── MyComponent.test.txs
-│   └── ...
 ├── android
 ├── app.json
 ├── assets                               // All assets: images, videos, ...
@@ -110,6 +105,11 @@ trnc init <ProjectName>
 ├── ios
 ├── publishing                           // Icon, screenshots, preview,... for App Store & Play Store
 └── src
+    ├── __tests__                        // Unit tests
+    │   ├── App.test.tsx                 // App component's tests
+    │   ├── components
+    │   │   └── MyComponent.test.txs
+    │   └── ...
     ├── App.tsx
     ├── actions                          // Actions
     │   ├── actionTypes.ts               // Action types
