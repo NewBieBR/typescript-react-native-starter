@@ -1,10 +1,25 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Codecov Coverage](https://img.shields.io/codecov/c/github/NewBieBR/typescript-react-native-starter.svg?style=popout)](https://codecov.io/gh/NewBieBR/typescript-react-native-starter)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
-# Typescript React Native Starter
-
-This is an opionated configuration for typescript react native project.
+<div align="center"><h1>Typescript React Native Starter</h1></div>
+<br/>
+<div align="center">A highly scalable foundation with a focus on best pratices and simplicity to start your React Native project in seconds.</div>
+<br/>
+<div align="center">
+  <a href="https://david-dm.org/NewBieBR/typescript-react-native-starter">
+    <img src="https://david-dm.org/NewBieBR/typescript-react-native-starter.svg" alt="Dependency Status" />
+  </a>
+  <a href="https://david-dm.org/NewBieBR/typescript-react-native-starter#info=devDependencies">
+    <img src="https://david-dm.org/NewBieBR/typescript-react-native-starter/dev-status.svg" alt="devDependency Status" />
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" />
+  </a>
+  <a href="https://codecov.io/gh/NewBieBR/typescript-react-native-starter">
+    <img src="https://img.shields.io/codecov/c/github/NewBieBR/typescript-react-native-starter.svg?style=popout" alt="Codecov Coverage" />
+  </a>
+  <a href="./CONTRIBUTING.md">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" />
+  </a>
+</div>
 
 ## Quick Start
 
@@ -20,11 +35,11 @@ trnc init <ProjectName>
 ## Features
 
 - **Typescript**
-  - [React Native's typescript template](https://github.com/react-native-community/react-native-template-typescript) based
+  - [Typescript](https://github.com/microsoft/TypeScript) based: enhance code quality, understandability and scability with `Interface oriented development`
 
 - **Flux State management**
   - [Redux](https://github.com/reduxjs/redux): predictable state container
-  - [Redux Persist](https://github.com/rt2zz/redux-persist): offline store
+  - [Redux Persist](https://github.com/rt2zz/redux-persist): offline and persistent store
   - [typesafe-actions](https://github.com/piotrwitek/typesafe-actions): create typesafe actions easily
 
       ```javascript
