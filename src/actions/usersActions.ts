@@ -1,5 +1,5 @@
+import { User } from 'src/types';
 import { action } from 'typesafe-actions';
-import { User } from '@types';
 import * as types from './actionTypes';
 
 export const fetchUserSuccess = (payload: User) =>

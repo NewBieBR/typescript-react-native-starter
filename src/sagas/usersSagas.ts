@@ -1,8 +1,8 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
 import * as types from '@actions/actionTypes';
 import { fetchUserFailure, fetchUserSuccess } from '@actions/usersActions';
 import JSONPlaceholderAPI from '@lib/jsonPlaceholderAPI';
-import { BaseAction } from '@types';
+import { call, put, takeEvery } from 'redux-saga/effects';
+import { BaseAction } from 'src/types';
 
 function* fetchUser(action: BaseAction) {
   try {
