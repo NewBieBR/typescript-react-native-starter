@@ -1,12 +1,12 @@
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import { View } from 'react-native';
+import {View} from 'react-native';
 // import { enableScreens } from 'react-native-screens';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/lib/integration/react';
-import App from 'src/App';
-import { navigationRef } from 'src/lib/NavigationService';
-import { persistor, store } from 'src/store';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/lib/integration/react';
+import App from './App';
+import {navigationRef} from './lib/NavigationService';
+import {persistor, store} from './store';
 
 // enableScreens();
 

@@ -1,18 +1,16 @@
-import { fetchUser } from '@actions/usersActions';
-import Strings from '@constants/strings';
-import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { RouteProp } from '@react-navigation/native';
-import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import { connect } from 'react-redux';
-import { AppTabParamList } from 'src/App';
-import { User } from 'src/types';
+import {fetchUser} from '../actions/usersActions';
+import Strings from '../constants/strings';
+import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
+import {RouteProp} from '@react-navigation/native';
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View} from 'react-native';
+import {connect} from 'react-redux';
+import {AppTabParamList} from '../App';
+import {User} from '../types';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+  android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
 });
 
 export interface HomeProps {
@@ -30,9 +28,7 @@ export class Home extends Component<HomeProps> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          {Strings.hello}. Welcome to React Native!
-        </Text>
+        <Text style={styles.welcome}>{Strings.hello}. Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit Home.tsx</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>

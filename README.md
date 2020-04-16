@@ -66,7 +66,7 @@ trnc init <ProjectName>
   - Placeholder feature graphic and screenshot to upload beta android app quickly
 
 - **Linting**
-  - Tslint configured with Airbnb styles
+  - Eslint configured for React Native
   - VSCode Prettier compatible
 
 - **Internationalization and localization**

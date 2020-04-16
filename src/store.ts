@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import appReducer from '@reducers/appReducer';
-import usersReducer from '@reducers/usersReducer';
-import sagas from '@sagas/index';
+import appReducer from './reducers/appReducer';
+import usersReducer from './reducers/usersReducer';
+import sagas from './sagas/';
 import {
   applyMiddleware,
   combineReducers,
@@ -10,7 +10,7 @@ import {
   Dispatch,
   MiddlewareAPI,
 } from 'redux';
-import { persistReducer, persistStore } from 'redux-persist';
+import {persistReducer, persistStore} from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 
 /*ß
@@ -37,10 +37,7 @@ export const reducers = {
 
 export const rootReducer = combineReducers(reducers);
 
-// tslint:disable-next-line: no-shadowed-variable
-const appMiddleware = (store: MiddlewareAPI) => (next: Dispatch) => (
-  action: any,
-) => {
+const appMiddleware = (_store: MiddlewareAPI) => (next: Dispatch) => (action: any) => {
   //   var state = store.getState()
   //   switch (action.type) {
   //     case actions.ADD_TASK:

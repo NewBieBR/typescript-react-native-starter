@@ -1,13 +1,32 @@
 module.exports = {
   root: true,
+  env: {
+    es6: true,
+    jest: true,
+  },
+  parser: '@typescript-eslint/parser',
   extends: [
     '@react-native-community',
-    'plugin:import/errors',
-    'plugin:import/warnings',
+    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
   ],
-  settings: {
-    'import/resolver': {
-      'babel-module': {},
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true, // Allows for the parsing of JSX
     },
   },
+  rules: {
+    '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+  },
+  // overrides: [
+  //   {
+  //     files: ['*.ts', '*.tsx'],
+  //     rules: {
+  //       '@typescript-eslint/explicit-function-return-type': ['error'],
+  //     },
+  //   },
+  // ],
 };

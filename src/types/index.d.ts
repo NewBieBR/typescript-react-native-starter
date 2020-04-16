@@ -5,4 +5,6 @@ export interface BaseAction {
   payload: any;
 }
 
-export interface User {}
+export interface User {
+  id?: string;
+}

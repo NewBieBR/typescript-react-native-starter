@@ -7,6 +7,6 @@ export default class JSONPlacholderAPI {
 
   static async fetchUser(userID: any) {
     const url = `${apiEntry}/${usersNamespace}/${userID}`;
-    return fetch(url).then(response => response.json());
+    return fetch(url).then((response) => response.json());
   }
 }
