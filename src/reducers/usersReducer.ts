@@ -1,5 +1,5 @@
 'use strict';
-import { USER } from '@actions/actionTypes';
+import {USER} from '../actions/actionTypes';
 
 const initialState = {
   user: null,
@@ -8,7 +8,7 @@ const initialState = {
 export default function usersReducer(state = initialState, action: any = {}) {
   switch (action.type) {
     case USER.FETCH_SUCCESS:
-      return { ...state, user: action.payload };
+      return {...state, user: action.payload};
     default:
       return state;
   }

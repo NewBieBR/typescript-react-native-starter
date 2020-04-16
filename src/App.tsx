@@ -1,6 +1,6 @@
-import Home from '@containers/Home';
-import Settings from '@containers/Settings';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Home from './containers/Home';
+import Settings from './containers/Settings';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import Icon from 'react-native-easy-icon';
 
@@ -8,15 +8,15 @@ const Tab = createBottomTabNavigator();
 
 export type AppTabParamList = {
   Home: undefined;
-  Settings: { userID?: string };
+  Settings: {userID?: string};
 };
 
 const App = () => {
   return (
     <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName: string = '';
+      screenOptions={({route}) => ({
+        tabBarIcon: ({focused, color, size}) => {
+          let iconName = '';
 
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
@@ -25,17 +25,9 @@ const App = () => {
           }
 
           // You can return any component that you like here!
-          return (
-            <Icon
-              name={iconName}
-              type="material-community"
-              size={size}
-              color={color}
-            />
-          );
+          return <Icon name={iconName} type="material-community" size={size} color={color} />;
         },
-      })}
-    >
+      })}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>

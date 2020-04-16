@@ -1,10 +1,10 @@
-import { Home } from '@containers/Home';
+import {Home} from '../../containers/Home';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
-import { render } from 'react-native-testing-library';
+import {render} from 'react-native-testing-library';
 
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({adapter: new Adapter()});
 
 const createTestProps = (props?: object) => ({
   fetchUser: jest.fn(),
@@ -17,7 +17,7 @@ jest.mock('react-redux', () => {
     connect: jest.fn().mockReturnValue(() => jest.fn()),
   };
 });
-jest.mock('@actions/usersActions', () => {
+jest.mock('../../actions/usersActions', () => {
   return {
     fetchUser: jest.fn().mockReturnValue('mock user action'),
   };
@@ -58,7 +58,7 @@ describe('Home', () => {
       navigate,
     },
   });
-  const { getByText, toJSON } = render(<Home {...props} />);
+  const {getByText, toJSON} = render(<Home {...props} />);
   it('should render a welcome', () => {
     expect(getByText(/welcome/i)).toBeDefined();
   });
@@ -76,8 +76,8 @@ describe('ConnectedHome', () => {
   const mockConnect = require('react-redux').connect;
   const mapStateToProps = mockConnect.mock.calls[0][0];
   it('should map user from state to props', () => {
-    const user = { id: '1' };
-    const mockState = { users: { user } };
+    const user = {id: '1'};
+    const mockState = {users: {user}};
     const props = mapStateToProps(mockState);
 
     expect(props.user).toEqual(user);
