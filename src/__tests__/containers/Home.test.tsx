@@ -1,85 +1,36 @@
-import {Home} from '../../containers/Home';
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
-import {render} from 'react-native-testing-library';
+import {fireEvent, render, waitFor} from '@testing-library/react-native';
+import Home from 'src/containers/Home';
+import {Provider} from 'react-redux';
+import {store} from 'src/store';
+import nock from 'nock';
+import JSONPlacholderAPI from 'src/lib/jsonPlaceholderAPI';
 
-Enzyme.configure({adapter: new Adapter()});
-
-const createTestProps = (props?: object) => ({
-  fetchUser: jest.fn(),
-  user: {},
-  ...props,
-});
-
-jest.mock('react-redux', () => {
-  return {
-    connect: jest.fn().mockReturnValue(() => jest.fn()),
-  };
-});
-jest.mock('../../actions/usersActions', () => {
-  return {
-    fetchUser: jest.fn().mockReturnValue('mock user action'),
-  };
-});
-
-jest.mock(
-  'react-native-localization',
-  () =>
-    class RNLocalization {
-      language = 'en';
-      props: any;
-
-      constructor(props: any) {
-        this.props = props;
-        this.setLanguage(this.language);
-      }
-
-      setLanguage(interfaceLanguage: any) {
-        this.language = interfaceLanguage;
-        if (this.props[interfaceLanguage]) {
-          const localizedStrings = this.props[this.language];
-          for (const key in localizedStrings) {
-            if (localizedStrings.hasOwnProperty(key)) {
-              (this as any)[key] = localizedStrings[key];
-            }
-          }
-        }
-      }
-    },
-);
+const mockFetchUser = jest.fn();
 
 describe('Home', () => {
-  const fetchUser = jest.fn();
-  const navigate = jest.fn();
-  const props: any = createTestProps({
-    fetchUser,
-    navigation: {
-      navigate,
-    },
-  });
-  const {getByText, toJSON} = render(<Home {...props} />);
-  it('should render a welcome', () => {
-    expect(getByText(/welcome/i)).toBeDefined();
+  const pageTree = (
+    <Provider store={store}>
+      <Home />
+    </Provider>
+  );
+  it('should renders correctly', () => {
+    const page = render(pageTree);
+    expect(page.toJSON()).toMatchSnapshot();
   });
 
-  it('should call fetchUser', () => {
-    expect(fetchUser).toBeCalled();
-  });
-
-  it('should match snapshot', () => {
-    expect(toJSON()).toMatchSnapshot();
-  });
-});
-
-describe('ConnectedHome', () => {
-  const mockConnect = require('react-redux').connect;
-  const mapStateToProps = mockConnect.mock.calls[0][0];
-  it('should map user from state to props', () => {
-    const user = {id: '1'};
-    const mockState = {users: {user}};
-    const props = mapStateToProps(mockState);
-
-    expect(props.user).toEqual(user);
+  it('should fetch user on click', async () => {
+    nock(`${JSONPlacholderAPI.apiEntry}`)
+      .get(`/${JSONPlacholderAPI.usersNamespace}/1`)
+      .reply(200, {
+        body: {id: '1', email: '1', name: '1', phone: '1'},
+      });
+    const page = render(pageTree);
+    const fetchUserButton = page.getByText('fetchUser');
+    fireEvent.press(fetchUserButton);
+    await waitFor(() => {
+      expect(mockFetchUser).toBeCalledTimes(1);
+    });
+    page.debug();
   });
 });

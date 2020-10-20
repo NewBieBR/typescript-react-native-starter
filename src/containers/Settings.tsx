@@ -1,21 +1,26 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {memo} from 'react';
+import {useTranslation} from 'react-i18next';
+import {Button, StyleSheet, Text, View} from 'react-native';
+import Colors from 'src/constants/colors';
 
-export default class Settings extends React.PureComponent {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text> Settings </Text>
-      </View>
-    );
-  }
+function Settings() {
+  const {t, i18n} = useTranslation();
+  return (
+    <View style={styles.container}>
+      <Text>{t('settings')}</Text>
+      <Button title={t('english')} onPress={() => i18n.changeLanguage('en')} />
+      <Button title={t('french')} onPress={() => i18n.changeLanguage('fr')} />
+    </View>
+  );
 }
+
+export default memo(Settings);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: Colors.aliceBlue,
   },
 });
