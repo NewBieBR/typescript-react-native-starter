@@ -166,6 +166,13 @@ trnc init <ProjectName>
   rm -rf .git
   ```
 
+## Recommended configurations
+
+- [Sentry](https://sentry.io/for/react-native/) for error tracking
+
+- [Codepush](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/) for cloud deployment
+
+- [Fastlane](https://docs.fastlane.tools/) for deployment automations
 
 ## Useful Tips & Notes
 
