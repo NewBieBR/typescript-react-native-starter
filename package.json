@@ -10,7 +10,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:ios": "open ./ios/*.xcworkspace && yarn start",
     "open:ios": "open ./ios/*.xcworkspace",
-    "open:android": "open -a '/Applications/Android Studio.app'",
+    "open:android": "open -a '/Applications/Android Studio.app' android",
     "start:android": "open -a '/Applications/Android Studio.app' ./android && yarn start",
     "lint": "yarn tsc && eslint . --ext .js,.ts,.tsx --cache",
     "test": "jest --verbose --coverage",
