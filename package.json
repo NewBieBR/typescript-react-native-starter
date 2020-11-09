@@ -34,6 +34,7 @@
     "react-native-bootsplash": "^2.2.7",
     "react-native-easy-icon": "^1.0.6",
     "react-native-gesture-handler": "^1.8.0",
+    "react-native-safe-area-context": "^3.1.8",
     "react-native-normalize": "^1.0.1",
     "react-native-reanimated": "^1.13.1",
     "react-native-screens": "^2.11.0",
