@@ -28,6 +28,9 @@ build/
 .gradle
 local.properties
 *.iml
+.keystore
+android/private_key*
+*.aab
 
 # Visual Studio Code
 #
@@ -75,3 +78,6 @@ reports/
 coverage/
 
 credentials
+
+
+._*
