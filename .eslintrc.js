@@ -42,6 +42,7 @@ module.exports = {
     'jest/no-focused-tests': 'error',
     'jest/no-disabled-tests': 'warn',
     'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'off',
   },
   overrides: [
     {
