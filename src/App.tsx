@@ -22,7 +22,7 @@ const App = () => {
 
   React.useEffect(() => {
     init().finally(() => {
-      RNBootSplash.hide({duration: 250}); // fade animation
+      RNBootSplash.hide();
     });
   }, []);
 

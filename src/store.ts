@@ -1,4 +1,4 @@
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import appReducer from 'src/reducers/appReducer';
 import usersReducer from 'src/reducers/usersReducer';
 import sagas from 'src/sagas/';
