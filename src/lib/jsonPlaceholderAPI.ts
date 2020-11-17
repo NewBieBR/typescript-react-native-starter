@@ -1,12 +1,15 @@
-const apiEntry = 'https://jsonplaceholder.typicode.com';
-const usersNamespace = 'users';
+import {User} from 'src/types';
 
 export default class JSONPlacholderAPI {
-  static apiEntry = apiEntry;
-  static usersNamespace = usersNamespace;
+  static apiEntry = 'https://jsonplaceholder.typicode.com';
+  static usersNamespace = 'users';
 
-  static async fetchUser(userID: any) {
-    const url = `${apiEntry}/${usersNamespace}/${userID}`;
-    return fetch(url).then((response) => response.json());
+  static async fetchUser(userID: string): Promise<User> {
+    const url = `${JSONPlacholderAPI.apiEntry}/${JSONPlacholderAPI.usersNamespace}/${userID}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const {id, email, name, phone} = data;
+    const user: User = {id, email, name, phone};
+    return user;
   }
 }

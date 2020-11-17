@@ -1,9 +1,11 @@
+import {createAction, createAsyncAction} from 'typesafe-actions';
 import {User} from '../types';
-import {action} from 'typesafe-actions';
-import * as types from './actionTypes';
 
-export const fetchUserSuccess = (payload: User) => action(types.USER.FETCH_SUCCESS, payload);
+export const fetchUserAsync = createAsyncAction(
+  ['USER_FETCH', (userID: string) => userID],
+  ['USER_FETCH_SUCCESS', (res: User) => res],
+  ['USER_FETCH_FAILURE', (err: Error) => err],
+  'USER_FETCH_CANCEL',
+)();
 
-export const fetchUserFailure = (payload: string) => action(types.USER.FETCH_FAILURE, payload);
-
-export const fetchUser = (payload: string) => action(types.USER.FETCH, payload);
+export const setUser = createAction('USER_SET', (user?: User) => user)();

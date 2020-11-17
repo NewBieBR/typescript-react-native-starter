@@ -1,57 +1,45 @@
-import {fetchUser} from '../actions/usersActions';
-import Strings from '../constants/strings';
-import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
-import {RouteProp} from '@react-navigation/native';
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import {connect} from 'react-redux';
-import {AppTabParamList} from '../App';
-import {User} from '../types';
+import React, {memo} from 'react';
+import {useTranslation} from 'react-i18next';
+import {Button, Platform, StyleSheet, Text, View} from 'react-native';
+import {useDispatch} from 'react-redux';
+import {fetchUserAsync} from 'src/actions/usersActions';
+import Colors from 'src/constants/colors';
+import {useSelector} from 'src/utils/useSelector';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
-});
+function Home() {
+  const user = useSelector((state) => state.users.user);
+  const {t} = useTranslation();
+  const dispatch = useDispatch();
+  const fetchUser = () => {
+    const userId = '1';
+    dispatch(fetchUserAsync.request(userId));
+  };
 
-export interface HomeProps {
-  fetchUser: typeof fetchUser;
-  user: User;
-  navigation: BottomTabNavigationProp<AppTabParamList, 'Home'>;
-  route: RouteProp<AppTabParamList, 'Home'>;
+  const instructions = Platform.select({
+    ios: t('iosInstruction'),
+    android: t('androidInstruction'),
+  });
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.welcome}>{t('welcome')}</Text>
+      <Text style={styles.instructions}>{t('instructions')}</Text>
+      <Text style={styles.instructions}>{instructions}</Text>
+      {user && <Text>user: </Text>}
+      <Text>{JSON.stringify(user)}</Text>
+      <Button title={t('fetchUser')} onPress={fetchUser} />
+    </View>
+  );
 }
 
-export class Home extends Component<HomeProps> {
-  componentDidMount() {
-    this.props.fetchUser('1');
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>{Strings.hello}. Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit Home.tsx</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
-  }
-}
-
-const mapStateToProps = (state: any) => ({
-  user: state.users.user,
-});
-
-const mapDispatchToProps = {
-  fetchUser,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default memo(Home);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: Colors.aliceBlue,
   },
   welcome: {
     fontSize: 20,
@@ -60,7 +48,7 @@ const styles = StyleSheet.create({
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: Colors.darkCharcoal,
     marginBottom: 5,
   },
 });

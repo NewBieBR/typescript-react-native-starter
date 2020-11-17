@@ -1,5 +1,7 @@
 'use strict';
-import {APP} from '../actions/actionTypes';
+import {setStoreState} from 'src/actions/appActions';
+import {createReducer} from 'typesafe-actions';
+import {AppAction} from 'src/actions/actionTypes';
 
 export interface AppReducerState {
   version: string;
@@ -9,11 +11,10 @@ const initialState: AppReducerState = {
   version: '1.0.0',
 };
 
-export default function appReducer(state = initialState, action: any = {}) {
-  switch (action.type) {
-    case APP.SET_STORE_STATE:
-      return Object.assign({}, initialState, state, action.payload);
-    default:
-      return state;
-  }
-}
+const appReducer = createReducer<AppReducerState, AppAction>(
+  initialState,
+).handleAction(setStoreState, (state, action) =>
+  Object.assign({}, initialState, state, action.payload),
+);
+
+export default appReducer;

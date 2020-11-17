@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import appReducer from './reducers/appReducer';
-import usersReducer from './reducers/usersReducer';
-import sagas from './sagas/';
+import appReducer from 'src/reducers/appReducer';
+import usersReducer from 'src/reducers/usersReducer';
+import sagas from 'src/sagas/';
 import {
   applyMiddleware,
   combineReducers,
@@ -12,8 +12,9 @@ import {
 } from 'redux';
 import {persistReducer, persistStore} from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
+import {RootAction} from 'src/actions/actionTypes';
 
-/*ß
+/*
  *--------------------------------------------------*
  * Persist config documentation
  * https://github.com/rt2zz/redux-persist/blob/master/src/types.js#L13-L27
@@ -36,8 +37,9 @@ export const reducers = {
 };
 
 export const rootReducer = combineReducers(reducers);
+export type RootState = ReturnType<typeof rootReducer>;
 
-const appMiddleware = (_store: MiddlewareAPI) => (next: Dispatch) => (action: any) => {
+const appMiddleware = (_store: MiddlewareAPI) => (next: Dispatch) => (action: RootAction) => {
   //   var state = store.getState()
   //   switch (action.type) {
   //     case actions.ADD_TASK:
