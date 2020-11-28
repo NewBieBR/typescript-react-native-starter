@@ -5,6 +5,7 @@ import Settings from 'src/containers/Settings';
 import {store} from 'src/store';
 
 describe('Settings', () => {
+  jest.useFakeTimers();
   const pageTree = (
     <Provider store={store}>
       <Settings />

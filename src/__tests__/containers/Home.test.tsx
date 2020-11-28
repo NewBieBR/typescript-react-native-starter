@@ -6,6 +6,7 @@ import Home from 'src/containers/Home';
 import {store} from 'src/store';
 
 describe('Home', () => {
+  jest.useFakeTimers();
   const pageTree = (
     <Provider store={store}>
       <Home />

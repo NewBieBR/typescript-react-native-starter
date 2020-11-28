@@ -12,21 +12,21 @@ describe('usersSaga', () => {
   const user: User = {id: '1', email: '', phone: '', name: ''};
 
   it('should fetch a user', () => {
-    expectSaga(usersSaga)
+    return expectSaga(usersSaga)
       .withReducer(usersReducer)
       .provide([[call(JSONPlacholderAPI.fetchUser, user.id), user]])
       .dispatch({type: getType(fetchUserAsync.request), payload: user.id})
       .put({type: getType(fetchUserAsync.success), payload: user})
       .hasFinalState({user})
-      .run();
+      .silentRun();
   });
 
   it('handles errors', () => {
     const error = new Error('Whoops');
-    expectSaga(usersSaga)
+    return expectSaga(usersSaga)
       .provide([[call(JSONPlacholderAPI.fetchUser, user.id), throwError(error)]])
       .dispatch({type: getType(fetchUserAsync.request), payload: user.id})
       .put({type: getType(fetchUserAsync.failure), payload: error})
-      .run();
+      .silentRun();
   });
 });
