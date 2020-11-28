@@ -40,13 +40,12 @@ trnc init <ProjectName>
 - **Flux State management**
   - [Redux](https://github.com/reduxjs/redux): predictable state container
   - [Redux Persist](https://github.com/rt2zz/redux-persist): offline and persistent store
-  - [typesafe-actions](https://github.com/piotrwitek/typesafe-actions): create typesafe actions easily
+  - [typesafe-actions](https://github.com/piotrwitek/typesafe-actions): create typesafe actions easily (and more)
 
       ```javascript
-      import { action } from 'typesafe-actions';
-      import * as types from './actionTypes';
+      import { createAction } from 'typesafe-actions';
 
-      export const myAction = payload => action(types.MY_ACTION_TYPE, payload);
+      export const myAction = createAction('MY_ACTION', (payload) => payload)();
       ```
 
   - [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux
@@ -55,8 +54,7 @@ trnc init <ProjectName>
   - [React Navigation](https://github.com/react-navigation/react-navigation): easy-to-use navigation solution based on Javascript
 
 - **Unit testing**
-  - Unit tests with [Jest](https://github.com/facebook/jest), [Enzyme](https://github.com/airbnb/enzyme) and [react-native-testing-library](https://github.com/callstack/react-native-testing-library)
-
+  - Unit tests with [Jest](https://github.com/facebook/jest), [react-native-testing-library](https://github.com/callstack/react-native-testing-library) and [redux-saga-test-plan](https://github.com/jfairbank/redux-saga-test-plan)
 - **Linting**
   - Eslint configured for React Native
   - VSCode Prettier compatible
@@ -202,23 +200,6 @@ Use the **normalize** functio from react-native-normalize whenever you have to u
 ### With `normalize`
 <img src="https://i.imgur.com/4IqqAR2.jpg" height="250"/>
 
-### Static bundle
-
-The static bundle is built every time you target a physical device, even in Debug. To save time, the bundle generation [is disabled in Debug](https://facebook.github.io/react-native/docs/running-on-device)
-
-
-### react-native-screens
-
-You can use react-native-screens with react-navigation in order to [improve memory consumption](https://reactnavigation.org/docs/en/community-libraries-and-navigators.html#react-native-screens)
-
-- Install and follow steps in `Usage with react-navigation (without Expo)` from [react-native-screens](https://github.com/kmagiera/react-native-screens)
-
-- Open `./src/index.tsx` and uncomment
-
-```javascript
-// import { enableScreens } from 'react-native-screens';
-// enableScreens();
-```
 
 
 ### Patch Package
@@ -302,5 +283,5 @@ git commit -m "fix brokenFile.js in some-package"
 Before each deployment, be sure to manually upgrade the `versionCode` value inside `android/app/build.gradle`.
 
 #### More
-- Checkout the [Fastlane's beta distribution guide](https://github.com/thecodingmachine/react-native-boilerplate/blob/master/docs/beta%20builds.md) for more details
+- Checkout the [Fastlane's beta distribution guide](https://github.com/thecodingmachine/react-native-boilerplate/blob/master/documentation/docs/3_Guides/BetaBuild.md) for more details
 - [Fastlane's documentation](https://docs.fastlane.tools/getting-started/cross-platform/react-native/) for React Native
