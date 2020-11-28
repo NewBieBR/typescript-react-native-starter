@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import appReducer from 'src/reducers/appReducer';
-import usersReducer from 'src/reducers/usersReducer';
+import appReducer, {AppReducerState} from 'src/reducers/appReducer';
+import usersReducer, {UsersState} from 'src/reducers/usersReducer';
 import sagas from 'src/sagas/';
 import {
   applyMiddleware,
@@ -10,7 +10,7 @@ import {
   Dispatch,
   MiddlewareAPI,
 } from 'redux';
-import {persistReducer, persistStore} from 'redux-persist';
+import {PersistConfig, persistReducer, persistStore} from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import {RootAction} from 'src/actions/actionTypes';
 
@@ -21,19 +21,19 @@ import {RootAction} from 'src/actions/actionTypes';
  *--------------------------------------------------*
  */
 
-const appPersistConfig = {
+const appPersistConfig: PersistConfig<AppReducerState, unknown, unknown, unknown> = {
   storage: AsyncStorage,
   key: 'app',
 };
 
-const userPersistConfig = {
+const usersPersistConfig: PersistConfig<UsersState, unknown, unknown, unknown> = {
   storage: AsyncStorage,
-  key: 'user',
+  key: 'users',
 };
 
 export const reducers = {
   app: persistReducer(appPersistConfig, appReducer),
-  users: persistReducer(userPersistConfig, usersReducer),
+  users: persistReducer(usersPersistConfig, usersReducer),
 };
 
 export const rootReducer = combineReducers(reducers);

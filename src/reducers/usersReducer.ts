@@ -4,7 +4,7 @@ import {User} from 'src/types';
 import {createReducer} from 'typesafe-actions';
 import {UsersAction} from 'src/actions/actionTypes';
 
-interface UsersState {
+export interface UsersState {
   user?: User;
 }
 

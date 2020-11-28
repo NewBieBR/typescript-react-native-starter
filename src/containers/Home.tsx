@@ -4,7 +4,7 @@ import {Button, Platform, StyleSheet, Text, View} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {fetchUserAsync} from 'src/actions/usersActions';
 import Colors from 'src/constants/colors';
-import {useSelector} from 'src/utils/useSelector';
+import useSelector from 'src/utils/useSelector';
 
 function Home() {
   const user = useSelector((state) => state.users.user);
