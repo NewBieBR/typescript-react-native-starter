@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home should match snapshot 1`] = `
+exports[`Home should renders correctly 1`] = `
 <View
   style={
     Object {
@@ -20,8 +20,7 @@ exports[`Home should match snapshot 1`] = `
       }
     }
   >
-    Hello
-    . Welcome to React Native!
+    welcome
   </Text>
   <Text
     style={
@@ -32,7 +31,7 @@ exports[`Home should match snapshot 1`] = `
       }
     }
   >
-    To get started, edit Home.tsx
+    instructions
   </Text>
   <Text
     style={
@@ -43,8 +42,49 @@ exports[`Home should match snapshot 1`] = `
       }
     }
   >
-    Press Cmd+R to reload,
-Cmd+D or shake for dev menu
+    iosInstruction
   </Text>
+  <Text />
+  <View
+    accessibilityRole="button"
+    accessibilityState={Object {}}
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {},
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#007AFF",
+              "fontSize": 18,
+              "margin": 8,
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        fetchUser
+      </Text>
+    </View>
+  </View>
 </View>
 `;

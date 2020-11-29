@@ -13,9 +13,6 @@
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" />
   </a>
-  <a href="https://codecov.io/gh/NewBieBR/typescript-react-native-starter">
-    <img src="https://img.shields.io/codecov/c/github/NewBieBR/typescript-react-native-starter.svg?style=popout" alt="Codecov Coverage" />
-  </a>
   <a href="./CONTRIBUTING.md">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" />
   </a>
@@ -40,13 +37,12 @@ trnc init <ProjectName>
 - **Flux State management**
   - [Redux](https://github.com/reduxjs/redux): predictable state container
   - [Redux Persist](https://github.com/rt2zz/redux-persist): offline and persistent store
-  - [typesafe-actions](https://github.com/piotrwitek/typesafe-actions): create typesafe actions easily
+  - [typesafe-actions](https://github.com/piotrwitek/typesafe-actions): create typesafe actions easily (and more)
 
       ```javascript
-      import { action } from 'typesafe-actions';
-      import * as types from './actionTypes';
+      import { createAction } from 'typesafe-actions';
 
-      export const myAction = payload => action(types.MY_ACTION_TYPE, payload);
+      export const myAction = createAction('MY_ACTION', (payload) => payload)();
       ```
 
   - [Redux Saga](https://github.com/redux-saga/redux-saga): side effect model for Redux
@@ -55,27 +51,28 @@ trnc init <ProjectName>
   - [React Navigation](https://github.com/react-navigation/react-navigation): easy-to-use navigation solution based on Javascript
 
 - **Unit testing**
-  - Unit tests with [Jest](https://github.com/facebook/jest), [Enzyme](https://github.com/airbnb/enzyme) and [react-native-testing-library](https://github.com/callstack/react-native-testing-library)
-- - [Codecov](https://codecov.io/): coverage report
-
-- **CI/CD**
-
-  - Run linting pre-commit and unit testing pre-push with [husky](https://github.com/typicode/husky)'s hooks
-  - Placeholder App Icon: useful for uploading your app to beta quickly with Fastlane
-  - [App Icon generator](https://github.com/dwmkerr/app-icon#readme): generate all required sizes, label and annotate icon.
-  - Placeholder feature graphic and screenshot to upload beta android app quickly
-
+  - Unit tests with [Jest](https://github.com/facebook/jest), [react-native-testing-library](https://github.com/callstack/react-native-testing-library) and [redux-saga-test-plan](https://github.com/jfairbank/redux-saga-test-plan)
 - **Linting**
   - Eslint configured for React Native
   - VSCode Prettier compatible
+  - Useful plugins installed (see  `.eslintrc.js`)
 
 - **Internationalization and localization**
-  - [react-native-localization](https://github.com/stefalda/ReactNativeLocalization): easy to use package for i18n
+  - [react-i18next](https://github.com/i18next/react-i18next): easy to use package for i18n
 
 - **Others**
+  - Absolute import from `src`:
+    Before:
+    ```JSX
+     import HomePage from '../../../../containers/HomePage'
+    ```
+
+    After:
+    ```JSX
+     import HomePage from 'src/containers/HomePage'
+    ```
   - [react-native-normalize](https://github.com/NewBieBR/react-native-normalize): make your app responsive easily
   - [react-native-easy-icon](https://github.com/NewBieBR/react-native-easy-icon#readme): wrapper component of [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) for easier usage:
-
     Before:
     ```JSX
     import AntDesignIcon from 'react-native-vector-icons/AntDesign';
@@ -93,21 +90,10 @@ trnc init <ProjectName>
 
   - [Cocoapods](https://github.com/CocoaPods/CocoaPods): iOS dependencies manager
   - [jetifier](https://github.com/mikehardy/jetifier#readme): transition tool for [React Native 0.60 AndroidX migration](https://facebook.github.io/react-native/blog/2019/07/03/version-60#androidx-support)
-  - [autobind-decorator](https://github.com/andreypopp/autobind-decorator#readme): bind your component's functions easily with a decorator
-
-    Before:
-    ```JSX
-    handleClick()  {...}
-
-    <button onClick={ this.handleClick.bind(this) }></button>
-    ```
-    After:
-    ```JSX
-    @boundMethod
-    handleClick() {...}
-
-    <button onClick={ this.handleClick }></button>
-    ```
+  - Run linting pre-commit and unit testing pre-push with [husky](https://github.com/typicode/husky)'s hooks
+  - Placeholder App Icon: useful for uploading your app to beta quickly with Fastlane
+  - [App Icon generator](https://github.com/dwmkerr/app-icon#readme): generate all required sizes, label and annotate icon.
+  - [Splash screen generator](https://github.com/zoontek/react-native-bootsplash): generate splash screen easily
 
 ## Project Structure
 
@@ -144,30 +130,6 @@ trnc init <ProjectName>
     │   └── index.d.ts
     └── utils                            // Utilities
 ```
-
-## Installation without [trnc](https://github.com/NewBieBR/typescript-react-native-starter#quick-start)
-
-- Clone this repo
-  ```
-  git clone git@github.com:NewBieBR/typescript-react-native-starter.git <PROJECT_NAME>
-  ```
-  ```
-  cd <PROJECT_NAME>
-  ```
-- Execute the installtion script
-  ```
-    yarn setup <PROJECT_NAME>
-  ```
-    > The script will rename, jetify your project, install imagemagick for app-icon generator, change husky pre-push to 'yarn test' instead of 'yarn codecov, delete README, CODE_OF_CONDUCT, CONTRIBUTING and LICENSE'
-
-#### if (you want to use Codecov) {
-- [Link your github repository with Codecov](https://docs.codecov.io/docs)
-
-- Update your project's informations and the Codecov token `scripts` > `codecov` in `package.json`
-
-- Change `husky` > `pre-push` to `yarn codecov` in `package.json`
-
-#### }
 
 ## Manual Installation
 
@@ -209,14 +171,13 @@ trnc init <ProjectName>
   rm -rf .git
   ```
 
-#### if (you want to use Codecov) {
-- [Link your github repository with Codecov](https://docs.codecov.io/docs)
+## Recommended configurations
 
-- Update your project's informations and the Codecov token `scripts` > `codecov` in `package.json`
+- [Sentry](https://sentry.io/for/react-native/) for error tracking
 
-#### } else {
-- Change `husky` > `pre-push` to `yarn test` in `package.json`
-#### }
+- [Codepush](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/) for Over-the-Air distributions
+
+- [Fastlane](https://docs.fastlane.tools/) for deployment automations
 
 ## Useful Tips & Notes
 
@@ -246,27 +207,6 @@ Use the **normalize** functio from react-native-normalize whenever you have to u
 ### With `normalize`
 <img src="https://i.imgur.com/4IqqAR2.jpg" height="250"/>
 
-### Static bundle
-
-The static bundle is built every time you target a physical device, even in Debug. To save time, the bundle generation [is disabled in Debug](https://facebook.github.io/react-native/docs/running-on-device)
-
-
-### react-native-screens
-
-You can use react-native-screens with react-navigation in order to [improve memory consumption](https://reactnavigation.org/docs/en/community-libraries-and-navigators.html#react-native-screens)
-
-- Install and follow steps in `Usage with react-navigation (without Expo)` from [react-native-screens](https://github.com/kmagiera/react-native-screens)
-
-- Open `./src/index.tsx` and uncomment
-
-```javascript
-// import { enableScreens } from 'react-native-screens';
-// enableScreens();
-```
-
-### React Native Extended Stylesheet
-
-[react-native-extended-stylesheet](https://github.com/vitalets/react-native-extended-stylesheet) is a drop-in replacement of React Native StyleSheet with media-queries, variables, dynamic themes, relative units, percents, math operations, scaling and other styling stuff.
 
 
 ### Patch Package
@@ -289,18 +229,6 @@ npx patch-package some-package
 # commit the patch file to share the fix with your team
 git add patches/some-package+3.14.15.patch
 git commit -m "fix brokenFile.js in some-package"
-```
-
-### NavigationService
-
-You can [navigate without navigation prop](https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html) by using **NavigationService** from `src/lib/NavigationService.ts`
-
-```typescript
-import NavigationService from '../lib/NavigationService';
-
-//...
-
-NavigationService.navigate('ChatScreen', { userName: 'Lucy' });
 ```
 
 
@@ -362,16 +290,5 @@ NavigationService.navigate('ChatScreen', { userName: 'Lucy' });
 Before each deployment, be sure to manually upgrade the `versionCode` value inside `android/app/build.gradle`.
 
 #### More
-- Checkout the [Fastlane's beta distribution guide](https://github.com/thecodingmachine/react-native-boilerplate/blob/master/docs/beta%20builds.md) for more details
+- Checkout the [Fastlane's beta distribution guide](https://github.com/thecodingmachine/react-native-boilerplate/blob/master/documentation/docs/3_Guides/BetaBuild.md) for more details
 - [Fastlane's documentation](https://docs.fastlane.tools/getting-started/cross-platform/react-native/) for React Native
-
-
-### Cocoapod
-
-When you run `react-native link` and the linked library has podspec file, then the linking will use Podfile. To disable this feature, remove
-
-```ruby
-# Add new pods below this line
-```
-
-from line 24 in `ios/Podfile`

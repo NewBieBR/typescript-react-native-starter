@@ -1,15 +1,17 @@
 'use strict';
-import {USER} from '../actions/actionTypes';
+import {fetchUserAsync, setUser} from 'src/actions/usersActions';
+import {User} from 'src/types';
+import {createReducer} from 'typesafe-actions';
+import {UsersAction} from 'src/actions/actionTypes';
 
-const initialState = {
-  user: null,
-};
-
-export default function usersReducer(state = initialState, action: any = {}) {
-  switch (action.type) {
-    case USER.FETCH_SUCCESS:
-      return {...state, user: action.payload};
-    default:
-      return state;
-  }
+export interface UsersState {
+  user?: User;
 }
+
+const initialState: UsersState = {};
+
+const usersReducer = createReducer<UsersState, UsersAction>(initialState)
+  .handleAction(fetchUserAsync.success, (state, action) => ({...state, user: action.payload}))
+  .handleAction(setUser, (state, action) => ({...state, user: action.payload}));
+
+export default usersReducer;

@@ -1,18 +1,21 @@
-import * as types from '../actions/actionTypes';
-import {fetchUserFailure, fetchUserSuccess} from '../actions/usersActions';
-import JSONPlaceholderAPI from '../lib/jsonPlaceholderAPI';
-import {call, put, takeEvery} from 'redux-saga/effects';
-import {BaseAction} from '../types';
+import {call, delay, put, race, take, takeLatest} from 'redux-saga/effects';
+import {fetchUserAsync} from 'src/actions/usersActions';
+import JSONPlaceholderAPI from 'src/lib/jsonPlaceholderAPI';
 
-function* fetchUser(action: BaseAction) {
+export function* fetchUserSaga(action: ReturnType<typeof fetchUserAsync.request>) {
   try {
-    const user = yield call(JSONPlaceholderAPI.fetchUser, action.payload);
-    yield put(fetchUserSuccess(user));
-  } catch (e) {
-    yield put(fetchUserFailure(e.message));
+    const {response} = yield race({
+      response: call(JSONPlaceholderAPI.fetchUser, action.payload),
+      cancel: take(fetchUserAsync.cancel),
+      failed: take(fetchUserAsync.failure),
+      timeout: delay(60000),
+    });
+    yield put(fetchUserAsync.success(response));
+  } catch (error) {
+    yield put(fetchUserAsync.failure(error));
   }
 }
 
 export default function* root() {
-  yield takeEvery(types.USER.FETCH, fetchUser);
+  yield takeLatest(fetchUserAsync.request, fetchUserSaga);
 }

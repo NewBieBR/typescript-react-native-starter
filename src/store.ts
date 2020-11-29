@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-community/async-storage';
-import appReducer from './reducers/appReducer';
-import usersReducer from './reducers/usersReducer';
-import sagas from './sagas/';
+import appReducer, {AppReducerState} from 'src/reducers/appReducer';
+import usersReducer, {UsersState} from 'src/reducers/usersReducer';
+import sagas from 'src/sagas/';
 import {
   applyMiddleware,
   combineReducers,
@@ -10,34 +10,36 @@ import {
   Dispatch,
   MiddlewareAPI,
 } from 'redux';
-import {persistReducer, persistStore} from 'redux-persist';
+import {PersistConfig, persistReducer, persistStore} from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
+import {RootAction} from 'src/actions/actionTypes';
 
-/*ß
+/*
  *--------------------------------------------------*
  * Persist config documentation
  * https://github.com/rt2zz/redux-persist/blob/master/src/types.js#L13-L27
  *--------------------------------------------------*
  */
 
-const appPersistConfig = {
+const appPersistConfig: PersistConfig<AppReducerState, unknown, unknown, unknown> = {
   storage: AsyncStorage,
   key: 'app',
 };
 
-const userPersistConfig = {
+const usersPersistConfig: PersistConfig<UsersState, unknown, unknown, unknown> = {
   storage: AsyncStorage,
-  key: 'user',
+  key: 'users',
 };
 
 export const reducers = {
   app: persistReducer(appPersistConfig, appReducer),
-  users: persistReducer(userPersistConfig, usersReducer),
+  users: persistReducer(usersPersistConfig, usersReducer),
 };
 
 export const rootReducer = combineReducers(reducers);
+export type RootState = ReturnType<typeof rootReducer>;
 
-const appMiddleware = (_store: MiddlewareAPI) => (next: Dispatch) => (action: any) => {
+const appMiddleware = (_store: MiddlewareAPI) => (next: Dispatch) => (action: RootAction) => {
   //   var state = store.getState()
   //   switch (action.type) {
   //     case actions.ADD_TASK:
