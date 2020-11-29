@@ -2,15 +2,14 @@ module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
   plugins: [
     [
-      require.resolve('babel-plugin-module-resolver'),
+      'module-resolver',
       {
-        cwd: 'babelrc',
-        extensions: ['.ts', '.tsx', '.js', '.ios.js', '.android.js'],
+        root: ['./src'],
+        extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
         alias: {
           src: './src',
         },
       },
     ],
-    'jest-hoist',
   ],
 };

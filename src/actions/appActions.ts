@@ -1,5 +1,5 @@
 import {createAction} from 'typesafe-actions';
-import {AppReducerState} from '../reducers/appReducer';
+import {AppReducerState} from 'src/reducers/appReducer';
 
 /**
  * Shallow merge new state with current app reducer state and initial state

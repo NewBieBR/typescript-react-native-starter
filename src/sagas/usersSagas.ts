@@ -1,6 +1,6 @@
 import {call, delay, put, race, take, takeLatest} from 'redux-saga/effects';
-import {fetchUserAsync} from '../actions/usersActions';
-import JSONPlaceholderAPI from '../lib/jsonPlaceholderAPI';
+import {fetchUserAsync} from 'src/actions/usersActions';
+import JSONPlaceholderAPI from 'src/lib/jsonPlaceholderAPI';
 
 export function* fetchUserSaga(action: ReturnType<typeof fetchUserAsync.request>) {
   try {

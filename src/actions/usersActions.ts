@@ -1,5 +1,5 @@
 import {createAction, createAsyncAction} from 'typesafe-actions';
-import {User} from '../types';
+import {User} from 'src/types';
 
 export const fetchUserAsync = createAsyncAction(
   ['USER_FETCH', (userID: string) => userID],

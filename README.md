@@ -61,6 +61,16 @@ trnc init <ProjectName>
   - [react-i18next](https://github.com/i18next/react-i18next): easy to use package for i18n
 
 - **Others**
+  - Absolute import from `src`:
+    Before:
+    ```JSX
+     import HomePage from '../../../../containers/HomePage'
+    ```
+
+    After:
+    ```JSX
+     import HomePage from 'src/containers/HomePage'
+    ```
   - [react-native-normalize](https://github.com/NewBieBR/react-native-normalize): make your app responsive easily
   - [react-native-easy-icon](https://github.com/NewBieBR/react-native-easy-icon#readme): wrapper component of [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) for easier usage:
     Before:
@@ -165,7 +175,7 @@ trnc init <ProjectName>
 
 - [Sentry](https://sentry.io/for/react-native/) for error tracking
 
-- [Codepush](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/) for cloud deployment
+- [Codepush](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/) for Over-the-Air distributions
 
 - [Fastlane](https://docs.fastlane.tools/) for deployment automations
 
