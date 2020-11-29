@@ -13,9 +13,6 @@
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" />
   </a>
-  <a href="https://codecov.io/gh/NewBieBR/typescript-react-native-starter">
-    <img src="https://img.shields.io/codecov/c/github/NewBieBR/typescript-react-native-starter.svg?style=popout" alt="Codecov Coverage" />
-  </a>
   <a href="./CONTRIBUTING.md">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome" />
   </a>
