@@ -1,0 +1,498 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should renders correctly 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <RNSScreenStack
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <RNSScreen
+      collapsable={false}
+      forwardedRef={[Function]}
+      onAppear={[Function]}
+      onDisappear={[Function]}
+      onDismissed={[Function]}
+      onTransitionProgress={[Function]}
+      onWillDisappear={[Function]}
+      replaceAnimation="push"
+      stackPresentation="push"
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <RNSScreenStackHeaderConfig
+        backButtonInCustomView={false}
+        backgroundColor="rgb(255, 255, 255)"
+        color="rgb(0, 122, 255)"
+        direction="ltr"
+        disableBackButtonMenu={false}
+        hidden={true}
+        hideBackButton={false}
+        largeTitleHideShadow={false}
+        title="mainBottomTab"
+        titleColor="rgb(28, 28, 30)"
+        topInsetEnabled={false}
+        translucent={false}
+      />
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "rgb(242, 242, 242)",
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              undefined,
+            ]
+          }
+        >
+          <RNSScreenNavigationContainer
+            style={
+              Object {
+                "flex": 1,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <RNSScreen
+              activityState={2}
+              collapsable={false}
+              forwardedRef={[Function]}
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "zIndex": 0,
+                }
+              }
+            >
+              <View
+                accessibilityElementsHidden={false}
+                importantForAccessibility="auto"
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "rgb(242, 242, 242)",
+                      "flex": 1,
+                    },
+                    Array [
+                      Object {
+                        "flex": 1,
+                        "flexDirection": "column-reverse",
+                      },
+                      undefined,
+                    ],
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "flex": 1,
+                    }
+                  }
+                >
+                  <View
+                    className="sc-bczRLJ crvKQZ"
+                  >
+                    <Text
+                      className="sc-gsnTZi iGbgVU"
+                    >
+                      home
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </RNSScreen>
+          </RNSScreenNavigationContainer>
+          <View
+            collapsable={false}
+            onLayout={[Function]}
+            pointerEvents="auto"
+            style={
+              Object {
+                "backgroundColor": "#f4f5f6",
+                "borderTopColor": "#f4f5f6",
+                "borderTopWidth": 0.5,
+                "bottom": 0,
+                "elevation": 8,
+                "height": 49,
+                "left": 0,
+                "paddingBottom": 0,
+                "paddingHorizontal": 0,
+                "position": null,
+                "right": 0,
+                "transform": Array [
+                  Object {
+                    "translateY": 0,
+                  },
+                ],
+              }
+            }
+          >
+            <View
+              pointerEvents="none"
+              style={
+                Object {
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            />
+            <View
+              accessibilityRole="tablist"
+              style={
+                Object {
+                  "flex": 1,
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessibilityLabel="home, tab, 1 of 2"
+                accessibilityRole="button"
+                accessibilityState={
+                  Object {
+                    "selected": true,
+                  }
+                }
+                accessibilityStates={
+                  Array [
+                    "selected",
+                  ]
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flex": 1,
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                    Object {
+                      "flexDirection": "column",
+                      "justifyContent": "flex-end",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "flex": 1,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "alignSelf": "center",
+                          "height": "100%",
+                          "justifyContent": "center",
+                          "minWidth": 25,
+                          "position": "absolute",
+                          "width": "100%",
+                        },
+                        Object {
+                          "opacity": 1,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgb(0, 122, 255)",
+                            "fontSize": 25,
+                          },
+                          undefined,
+                          Object {
+                            "fontFamily": "anticon",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      
+                    </Text>
+                  </View>
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "alignSelf": "center",
+                          "height": "100%",
+                          "justifyContent": "center",
+                          "minWidth": 25,
+                          "position": "absolute",
+                          "width": "100%",
+                        },
+                        Object {
+                          "opacity": 0,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {
+                            "color": "#8E8E8F",
+                            "fontSize": 25,
+                          },
+                          undefined,
+                          Object {
+                            "fontFamily": "anticon",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      
+                    </Text>
+                  </View>
+                </View>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "color": "rgb(0, 122, 255)",
+                      },
+                      Object {
+                        "fontSize": 10,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  home
+                </Text>
+              </View>
+              <View
+                accessibilityLabel="settings, tab, 2 of 2"
+                accessibilityRole="button"
+                accessibilityState={
+                  Object {
+                    "selected": false,
+                  }
+                }
+                accessibilityStates={Array []}
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "flex": 1,
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                    Object {
+                      "flexDirection": "column",
+                      "justifyContent": "flex-end",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "flex": 1,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "alignSelf": "center",
+                          "height": "100%",
+                          "justifyContent": "center",
+                          "minWidth": 25,
+                          "position": "absolute",
+                          "width": "100%",
+                        },
+                        Object {
+                          "opacity": 0,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgb(0, 122, 255)",
+                            "fontSize": 25,
+                          },
+                          undefined,
+                          Object {
+                            "fontFamily": "anticon",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      
+                    </Text>
+                  </View>
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "alignSelf": "center",
+                          "height": "100%",
+                          "justifyContent": "center",
+                          "minWidth": 25,
+                          "position": "absolute",
+                          "width": "100%",
+                        },
+                        Object {
+                          "opacity": 1,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      allowFontScaling={false}
+                      selectable={false}
+                      style={
+                        Array [
+                          Object {
+                            "color": "#8E8E8F",
+                            "fontSize": 25,
+                          },
+                          undefined,
+                          Object {
+                            "fontFamily": "anticon",
+                            "fontStyle": "normal",
+                            "fontWeight": "normal",
+                          },
+                          Object {},
+                        ]
+                      }
+                    >
+                      
+                    </Text>
+                  </View>
+                </View>
+                <Text
+                  numberOfLines={1}
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "color": "#8E8E8F",
+                      },
+                      Object {
+                        "fontSize": 10,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  settings
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RNSScreen>
+  </RNSScreenStack>
+</RNCSafeAreaProvider>
+`;

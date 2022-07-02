@@ -17,10 +17,8 @@ module.exports = {
     'react-native-a11y',
   ],
   extends: [
-    '@react-native-community',
     'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     'plugin:prettier/recommended',
-    'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -43,6 +41,14 @@ module.exports = {
     'jest/no-disabled-tests': 'warn',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'off',
+    'no-restricted-imports': [
+      'error',
+      {
+        name: 'react-redux',
+        importNames: ['useSelector', 'useDispatch'],
+        message: 'use hooks in `src/hooks/useSelector` for typing support',
+      },
+    ],
   },
   overrides: [
     {
@@ -50,4 +56,5 @@ module.exports = {
       rules: {},
     },
   ],
+  ignorePatterns: ['**/node_modules/**'],
 };

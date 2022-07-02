@@ -1,66 +1,40 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import * as React from 'react';
-import {useTranslation} from 'react-i18next';
-import RNBootSplash from 'react-native-bootsplash';
-import Icon from 'react-native-easy-icon';
-import Home from 'src/containers/Home';
-import Settings from 'src/containers/Settings';
-import {sleep} from './utils/async';
+import {NavigationContainer} from '@react-navigation/native';
+import React, {memo, ReactNode} from 'react';
+import {StatusBar} from 'react-native';
+import {Provider} from 'react-redux';
+import {AppStack} from 'src/navigators/AppStack';
+import {store} from 'src/store';
+import {ThemeProvider} from 'styled-components';
+import {useSelector} from './hooks/useSelector';
+import {themeTypeSelector} from './modules/app/selectors';
+import {useColorScheme} from 'react-native';
+import {Themes} from './theme';
 
-export type AppTabParamList = {
-  Home: undefined;
-  Settings: {userID?: string};
-};
+const AppThemeProvider = ({children}: {children: ReactNode | ReactNode[]}) => {
+  const userSelectedThemeType = useSelector(themeTypeSelector);
+  const systemThemeType = useColorScheme();
+  const themeType =
+    userSelectedThemeType === 'system' && systemThemeType ? systemThemeType : userSelectedThemeType;
+  const theme = Themes[themeType];
 
-const Tab = createBottomTabNavigator();
-
-const App = () => {
-  const init = async () => {
-    await sleep(1000);
-    // …do multiple async tasks
-  };
-
-  React.useEffect(() => {
-    init().finally(() => {
-      RNBootSplash.hide({duration: 250}); // fade animation
-    });
-  }, []);
-
-  const {t} = useTranslation();
   return (
-    <Tab.Navigator initialRouteName="home">
-      <Tab.Screen
-        name="home"
-        component={Home}
-        options={{
-          tabBarLabel: t('home'),
-          tabBarIcon: ({focused, color, size}) => (
-            <Icon
-              name={focused ? 'home' : 'home-outline'}
-              type="material-community"
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="settings"
-        component={Settings}
-        options={{
-          tabBarLabel: t('settings'),
-          tabBarIcon: ({focused, color, size}) => (
-            <Icon
-              name={focused ? 'cog' : 'cog-outline'}
-              type="material-community"
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
-    </Tab.Navigator>
+    <ThemeProvider theme={theme}>
+      <StatusBar barStyle={theme.barStyle} />
+      {children}
+    </ThemeProvider>
   );
 };
 
-export default App;
+const AppComponent = (): JSX.Element => {
+  return (
+    <Provider store={store}>
+      <AppThemeProvider>
+        <NavigationContainer>
+          <AppStack />
+        </NavigationContainer>
+      </AppThemeProvider>
+    </Provider>
+  );
+};
+
+export const App = memo(AppComponent);

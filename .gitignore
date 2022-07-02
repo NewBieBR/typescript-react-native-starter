@@ -28,9 +28,9 @@ build/
 .gradle
 local.properties
 *.iml
-.keystore
 android/private_key*
 *.aab
+*.apk
 
 # Visual Studio Code
 #
@@ -58,6 +58,7 @@ buck-out/
 */fastlane/report.xml
 */fastlane/Preview.html
 */fastlane/screenshots
+/fastlane/report.xml
 
 # Bundle artifact
 *.jsbundle
@@ -74,10 +75,20 @@ reports/
 
 # CocoaPods
 /ios/Pods/
+/ios/builds/
 
 coverage/
 
 credentials
 
+*.psd
+
+screenshots
 
 ._*
+
+/codepush
+
+/src/constants/environment/index.ts
+
+/builds

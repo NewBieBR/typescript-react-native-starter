@@ -1,18 +1,10 @@
-import AsyncStorage from '@react-native-community/async-storage';
-import appReducer, {AppReducerState} from 'src/reducers/appReducer';
-import usersReducer, {UsersState} from 'src/reducers/usersReducer';
-import sagas from 'src/sagas/';
-import {
-  applyMiddleware,
-  combineReducers,
-  compose,
-  createStore,
-  Dispatch,
-  MiddlewareAPI,
-} from 'redux';
-import {PersistConfig, persistReducer, persistStore} from 'redux-persist';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {configureStore} from '@reduxjs/toolkit';
+import {applyMiddleware, combineReducers, compose, Dispatch, MiddlewareAPI} from 'redux';
+import {persistReducer, persistStore} from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
-import {RootAction} from 'src/actions/actionTypes';
+import {appReducer} from 'src/modules/app/reducer';
+import {RootAction} from './types/actions';
 
 /*
  *--------------------------------------------------*
@@ -21,24 +13,18 @@ import {RootAction} from 'src/actions/actionTypes';
  *--------------------------------------------------*
  */
 
-const appPersistConfig: PersistConfig<AppReducerState, unknown, unknown, unknown> = {
+const appPersistConfig = {
   storage: AsyncStorage,
   key: 'app',
 };
 
-const usersPersistConfig: PersistConfig<UsersState, unknown, unknown, unknown> = {
-  storage: AsyncStorage,
-  key: 'users',
-};
-
 export const reducers = {
   app: persistReducer(appPersistConfig, appReducer),
-  users: persistReducer(usersPersistConfig, usersReducer),
 };
 
 export const rootReducer = combineReducers(reducers);
-export type RootState = ReturnType<typeof rootReducer>;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const appMiddleware = (_store: MiddlewareAPI) => (next: Dispatch) => (action: RootAction) => {
   //   var state = store.getState()
   //   switch (action.type) {
@@ -54,9 +40,15 @@ const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware, appMiddleware];
 const enhancers = [applyMiddleware(...middlewares)];
 
-export const store = createStore(rootReducer, compose(...enhancers));
+export const store = configureStore({
+  reducer: rootReducer,
+  enhancers: compose(...enhancers),
+});
 
-sagaMiddleware.run(sagas);
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
+// sagaMiddleware.run(sagas);
 
 export const persistor = persistStore(store);
 
