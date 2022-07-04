@@ -4,12 +4,6 @@
 <div align="center">A highly scalable foundation with a focus on best pratices and simplicity to start your React Native project in seconds.</div>
 <br/>
 <div align="center">
-  <a href="https://david-dm.org/NewBieBR/typescript-react-native-starter">
-    <img src="https://david-dm.org/NewBieBR/typescript-react-native-starter.svg" alt="Dependency Status" />
-  </a>
-  <a href="https://david-dm.org/NewBieBR/typescript-react-native-starter#info=devDependencies">
-    <img src="https://david-dm.org/NewBieBR/typescript-react-native-starter/dev-status.svg" alt="devDependency Status" />
-  </a>
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" />
   </a>
@@ -72,6 +66,7 @@ trnc init <ProjectName>
      import HomePage from 'src/containers/HomePage'
     ```
   - [react-native-normalize](https://github.com/NewBieBR/react-native-normalize): make your app responsive easily
+  - [styled-components](https://github.com/styled-components/styled-components):  allows you to write actual CSS code to style your components
   - [react-native-easy-icon](https://github.com/NewBieBR/react-native-easy-icon#readme): wrapper component of [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) for easier usage:
     Before:
     ```JSX
@@ -101,33 +96,44 @@ trnc init <ProjectName>
 ├── android
 ├── app.json
 ├── assets                               // All assets: images, videos, ...
-├── credentials                          // Private informations: API keys,...
+├── credentials                          // (gitignore) Private informations: API keys,...
 ├── index.js
 ├── ios
 ├── publishing                           // Icon, screenshots, preview,... for App Store & Play Store
+├── __tests__                            // Unit tests
+│   ├── App.test.tsx                     // App component's tests
+│   └── components
+│       └── MyComponent.test.txs
 └── src
-    ├── __tests__                        // Unit tests
-    │   ├── App.test.tsx                 // App component's tests
-    │   ├── components
-    │   │   └── MyComponent.test.txs
-    │   └── ...
-    ├── App.tsx
-    ├── actions                          // Actions
-    │   ├── actionTypes.ts               // Action types
-    │   └── app.ts                       // appReducer's actions
-    ├── components                       // Components
-    │   └── MyComponent.tsx
-    ├── constants                        // Colors, sizes, routes,...
-    │   └── strings.ts                   // i18n
-    ├── containers                       // Screens, pages,...
-    ├── lib                              // Libraries, services,...
-    ├── index.tsx                        // Root component
-    ├── reducers                         // Reducers
-    │   └── app.ts                       // appReducer
-    ├── sagas                            // Redux sagas
+    ├── App.tsx                          // Root component
     ├── store.ts
+    ├── theme.ts
+    ├── i18n.ts
+    ├── modules
+    │   ├── app
+    │   │   ├── reducer.ts               
+    │   │   ├── actions.ts               
+    │   │   └── selectors.ts                   
+    │   └── auth
+    │       └── ...                   
+    ├── components
+    │   ├── ...
+    │   └── MyComponent.tsx
+    ├── constants
+    │   └── colors.ts
+    ├── navigators
+    │   ├── ...
+    │   ├── MainBottomTab.tsx
+    │   └── AuthStack.tsx
+    ├── pages
+    │   ├── ...
+    │   ├── SignupPage.tsx
+    │   └── LoginPage.tsx
     ├── types                            // Type declarations
     │   └── index.d.ts
+    ├── lib                              // Libraries, services,...
+    ├── sagas                            // Redux sagas
+    ├── hooks
     └── utils                            // Utilities
 ```
 
